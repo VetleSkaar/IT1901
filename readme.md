@@ -8,11 +8,11 @@ With this application we aim to build a casino, where users can gamble using cur
 
 [Insert App picture here]
 
-Userstories;
--As a customer, I want to be able to gamble so that I can become rich.
--As an owner, I want my customers to lose money so that I can become rich.
--As an owner, I want to test my application to avoid upset customers.
--As a user, I want the application to be viewable and not just in the terminal.
+Userstories; \n
+-As a customer, I want to be able to gamble so that I can become rich. \n
+-As an owner, I want my customers to lose money so that I can become rich. \n
+-As an owner, I want to test my application to avoid upset customers. \n
+-As a user, I want the application to be viewable and not just in the terminal. \n
 
 From lectures, remove later.
 ''User stories
