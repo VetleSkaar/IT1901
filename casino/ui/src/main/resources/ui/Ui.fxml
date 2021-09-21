@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="700.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="ui.AppController">
+   <children>
+      <AnchorPane layoutX="22.0" layoutY="24.0" prefHeight="666.0" prefWidth="738.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="47.0">
+         <children>
+            <AnchorPane layoutX="344.0" layoutY="58.0" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="395.0" prefWidth="297.0" style="-fx-background-color: white; -fx-background-radius: 1em;" AnchorPane.bottomAnchor="58.0" AnchorPane.leftAnchor="345.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="58.0">
+               <children>
+                  <Label layoutX="62.0" layoutY="27.0" prefHeight="40.0" prefWidth="174.0" text="Sign In" AnchorPane.leftAnchor="62.0" AnchorPane.rightAnchor="61.0" AnchorPane.topAnchor="27.0">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="62.0" layoutY="79.0" maxWidth="-Infinity" prefHeight="55.0" prefWidth="216.0" promptText="Username" AnchorPane.leftAnchor="62.0" AnchorPane.rightAnchor="19.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <PasswordField layoutX="62.0" layoutY="156.0" maxWidth="-Infinity" prefHeight="55.0" prefWidth="216.0" promptText="Password" AnchorPane.leftAnchor="62.0" AnchorPane.rightAnchor="19.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </PasswordField>
+                  <JFXButton buttonType="RAISED" layoutX="62.0" layoutY="235.0" prefHeight="31.0" prefWidth="72.0" ripplerFill="WHITE" style="-fx-background-color: orange; -fx-background-radius: 1em;" text="Sign In" AnchorPane.leftAnchor="62.0" AnchorPane.topAnchor="235.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="62.0" layoutY="346.0" prefHeight="25.0" prefWidth="121.0" style="-fx-background-color: Orange; -fx-background-radius: 1em;" text="Create new user" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="62.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXButton>
+                  <Label layoutX="67.0" layoutY="305.0" prefHeight="17.0" prefWidth="216.0" text="New user?" AnchorPane.bottomAnchor="58.0" AnchorPane.leftAnchor="67.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+            <AnchorPane layoutX="14.0" layoutY="42.0" prefHeight="425.0" prefWidth="360.0" style="-fx-background-color: linear-gradient(to right bottom, #21070b, #530d1b, #8a0421, #c2001f, #f90b0b); -fx-background-radius: 1em;" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="40.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" layoutX="91.0" maxWidth="1.7976931348623157E308" prefHeight="426.0" prefWidth="270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label text="Casino" textFill="WHITE">
+                           <font>
+                              <Font size="56.0" />
+                           </font>
+                        </Label>
+                        <Label text="Slots &amp; Blackjack" textFill="WHITE">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
