@@ -14,7 +14,7 @@ public class Player {
 
     public Player(String name, int balance) {
         this(name);
-        if (balance <= 0) {
+        if (balance < 0) {
             throw new IllegalArgumentException("Player balance must be positive.");
         }
         this.balance = balance;
