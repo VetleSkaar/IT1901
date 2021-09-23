@@ -1,26 +1,36 @@
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-green?logo=gitpod)](https://gitpod.stud.ntnu.no/#https://gitlab.stud.idi.ntnu.no/it1901/groups-2021/gr2152/gr2152)
-# Javafx template
 
-A repository with three variants of a javafx projects, with maven setup for Java 16 and JavaFX 16, and JUnit 5 (Jupiter) and TestFX for testing.
+# Group gr2152 repository
 
-To make the project(s) more interesting, it is the start of an [RPN](https://en.wikipedia.org/wiki/Reverse_Polish_notation) calculator (look for `// TODO`) markers). The core logic is almost implemented (in [Calc.java](javafx-template/src/main/java/app/Calc.java)), the fxml file (in [App.fxml](javafx-template/src/main/resources/app/App.fxml) is almost complete, but the controller class (in [AppController.java](javafx-template/src/main/java/app/AppController.java) is pretty limited. And last, but not least, there is a TestFX-based test (in [AppTest.java](javafx-template/src/test/java/app/AppTest.java), see the [README](javafx-template/src/test/java/app/README.md) for details about what it tests).
+Welcome to our IT1901 Fall 2021 course application.
 
-## javafx-template
+With this application we aim to build a casino, where users can gamble using currency.
 
-Template for  single-module, single-package javafx project.
+We plan to have several games in the casino.
 
-## packages-template
+[Insert App picture here]
 
-Template for  single-module, multi-package javafx project.
+Userstories;
 
-## modules-template
+-As a customer, I want to be able to gamble so that I can become rich.
 
-Template for  multi-module, multi-package javafx project.
+-As an owner, I want my customers to lose money so that I can become rich.
 
-## Trying it out
+-As an owner, I want to test my application to avoid upset customers.
 
-All projects can be tried out by cd-ing into the corresponding folder and using `mvn`:
+-As a user, I want the application to be viewable and not just in the terminal.
 
-- compile with `mvn compile` (after `cd javafx-template` of course)
-- test with `mvn test` (it should fail until you complete the RPN calculator)
-- run with `mvn javafx:run` (it should open, but not work properly)
+From lectures, remove later.
+''User stories
+
+    short, simple descriptions for application features
+
+    formulated from the stand point of the user / customer
+
+    template:
+
+        As a < type of user >, I want < some goal > so that < some reason >.
+
+    they are not replacing design documents / requirements specification
+
+    they need to be developed into specific tasks and connected to constraints and other meaningful documentation.''
