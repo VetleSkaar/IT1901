@@ -2,11 +2,11 @@ package ui;
 
 import core.App;
 
-import com.jfoenix.controls.JFXButton;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
@@ -22,10 +22,10 @@ public class AppController {
     private PasswordField signInPassword;
 
     @FXML
-    private JFXButton signInBtn;
+    private Button signInBtn;
 
     @FXML
-    private JFXButton newUserBtn;
+    private Button newUserBtn;
 
     
     //------------Functions-----------------//
