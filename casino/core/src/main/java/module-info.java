@@ -1,3 +1,3 @@
-module calc.core {
+module casino.core {
     exports core;
 }

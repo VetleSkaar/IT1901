@@ -1,5 +1,5 @@
-module calc.ui {
-    requires calc.core;
+module casino.ui {
+    requires casino.core;
     requires javafx.controls;
     requires javafx.fxml;
 
