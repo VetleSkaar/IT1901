@@ -28,5 +28,8 @@ public class Player {
     }
 
 
+    public updateBalance() {
+        //todo
+    }
 
 }
