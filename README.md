@@ -2,7 +2,7 @@
 
 # Group gr2152 repository
 
-## Casino#
+## Casino
 
 Welcome to our IT1901 Fall 2021 course application.
 
@@ -24,7 +24,7 @@ As necessary
 
 Every module contains a pom.xml
 
-# core
+# Core
 
 Casino core contains code for the game logic needed. As per the first release it contains code for the Player-class and tests for the Player class.
 
@@ -45,7 +45,12 @@ Our application is localized in our UI-module, and uses a javafx plugin.To run t
 	
 # How to run with gitpod
 If running with gitpod, press the button and wait for it to load a virtual machine.
-Go into correct folder with cd ui
+Go into correct folder with:
+
+	“cd ui”
+    “mvn compile”
+    Test with “mvn test”
+	Run with “mvn javafx:run”
 
 # How to test
 To test the whole project, enter:
