@@ -49,7 +49,6 @@ Our application is localized in our UI-module, and uses a javafx plugin.To run t
 If running with gitpod, press the button and wait for it to load a virtual machine.
 Go into correct folder with:
 
-	"mvn clean"
 	"mvn install"
 	“mvn compile”
 	“cd ui”
