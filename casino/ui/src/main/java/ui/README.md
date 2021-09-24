@@ -6,7 +6,8 @@ The login window consists of text fields for username and password, as well as a
 
 The game window for Blackjack consists of the cards for both the player and the dealer. It also has buttons for user input. (The interface has not yet been designed but an example is attached below. Red is for buttons, blue is for text fields and gray is information for the player)
 
+Example of Blackjack table layout
+![Blackjack example](casino/resources/BlackjackBoardExample.PNG)
 
-![Blackjack example](/resources/BlackjackBoardExample.PNG)
-
-![Login example](/resources/LoginImage.PNG)
+Screenshot of login window
+![Login example](casino/resources/LoginImage.PNG)
