@@ -37,19 +37,23 @@ Later in the project we plan to add a persistence module, with all code related 
 
 Our application is localized in our UI-module, and uses a javafx plugin.To run the application you wish to first enter the following in the terminal, starting from our group directory:
 
+	
 	“cd casino”
+	"mvn clean"
+	"mvn install"
+	“mvn compile”
 	“cd ui”
-    “mvn compile”
-    Test with “mvn test”
 	Run with “mvn javafx:run”
 	
 # How to run with gitpod
 If running with gitpod, press the button and wait for it to load a virtual machine.
 Go into correct folder with:
 
+	"mvn clean"
+	"mvn install"
+	“mvn compile”
 	“cd ui”
     “mvn compile”
-    Test with “mvn test”
 	Run with “mvn javafx:run”
 
 # How to test
