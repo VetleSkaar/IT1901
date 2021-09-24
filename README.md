@@ -52,7 +52,6 @@ Go into correct folder with:
 	"mvn install"
 	“mvn compile”
 	“cd ui”
-    “mvn compile”
 	Run with “mvn javafx:run”
 
 # How to test
