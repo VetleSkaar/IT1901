@@ -53,6 +53,7 @@ Go into correct folder with:
 	“mvn compile”
 	“cd ui”
 	Run with “mvn javafx:run”
+	Open port view 6080 to see the application
 
 # How to test
 To test the whole project, enter:
