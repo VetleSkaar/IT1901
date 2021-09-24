@@ -29,13 +29,13 @@
                         <Font size="18.0" />
                      </font>
                   </PasswordField>
-                  <Label layoutX="67.0" layoutY="305.0" prefHeight="17.0" prefWidth="216.0" text="New user?" AnchorPane.bottomAnchor="58.0" AnchorPane.leftAnchor="67.0">
+                  <Label layoutX="62.0" layoutY="441.0" prefHeight="17.0" prefWidth="216.0" text="New user?" AnchorPane.leftAnchor="62.0" AnchorPane.topAnchor="441.0">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Button fx:id="signInBtn" layoutX="62.0" layoutY="239.0" mnemonicParsing="false" onAction="#onSignInClick" prefHeight="31.0" prefWidth="78.0" text="Sign In" />
-                  <Button fx:id="newUserBtn" layoutX="62.0" layoutY="490.0" mnemonicParsing="false" onAction="#onNewUserClick" prefHeight="31.0" prefWidth="108.0" text="Create new user" />
+                  <Button fx:id="signInBtn" layoutX="62.0" layoutY="239.0" mnemonicParsing="false" onAction="#onSignInClick" prefHeight="31.0" prefWidth="78.0" text="Sign In" AnchorPane.leftAnchor="62.0" AnchorPane.topAnchor="239.0" />
+                  <Button fx:id="newUserBtn" layoutX="62.0" layoutY="490.0" mnemonicParsing="false" onAction="#onNewUserClick" prefHeight="31.0" prefWidth="108.0" text="Create new user" AnchorPane.leftAnchor="62.0" AnchorPane.topAnchor="490.0" />
                </children></AnchorPane>
             <AnchorPane layoutX="14.0" layoutY="42.0" prefHeight="425.0" prefWidth="360.0" style="-fx-background-color: linear-gradient(to right bottom, #21070b, #530d1b, #8a0421, #c2001f, #f90b0b); -fx-background-radius: 1em;" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="40.0">
                <children>
