@@ -2,35 +2,54 @@
 
 # Group gr2152 repository
 
+## Casino#
+
 Welcome to our IT1901 Fall 2021 course application.
 
 With this application we aim to build a casino, where users can gamble using currency.
 
-We plan to have several games in the casino.
+# Code-Organization
 
-[Insert App picture here]
+The project “casino” is, in this release, organized in 2 modules, casino-core and casino-UI, respectively with main-code and tests. 
 
-Userstories;
+Every module contains:
+**src/main/java:**  for application-code
+**src/test/java:**  Test code.
 
--As a customer, I want to be able to gamble so that I can become rich.
+Later on in the project we plan to add:
 
--As an owner, I want my customers to lose money so that I can become rich.
+**src/main/resources:** Necessary resources, data files and FXML files for application code
+**src/main/resources:** Necessary resources, data files and FXML files for test code
+As necessary
 
--As an owner, I want to test my application to avoid upset customers.
+Every module contains a pom.xml
 
--As a user, I want the application to be viewable and not just in the terminal.
+# core
 
-From lectures, remove later.
-''User stories
+Casino core contains code for the game logic needed. As per the first release it contains code for the Player-class and tests for the Player class.
 
-    short, simple descriptions for application features
+# UI
 
-    formulated from the stand point of the user / customer
+casino-UI contains all classes and logic in relation to the visual representation and user interface of the game. As per the fist release it contains the FXML and controller for the player login screen. 
+Later in the project we plan to add a persistence module, with all code related writing and reading data in our domain. This is yet to be implemented. 
 
-    template:
+# How to run locally
 
-        As a < type of user >, I want < some goal > so that < some reason >.
+Our application is localized in our UI-module, and uses a javafx plugin.To run the application you wish to first enter the following in the terminal, starting from our group directory:
 
-    they are not replacing design documents / requirements specification
+	“cd casino”
+	“cd ui”
+    “mvn compile”
+    Test with “mvn test”
+	Run with “mvn javafx:run”
+	
+# How to run with gitpod
+If running with gitpod, press the button and wait for it to load a virtual machine.
+Go into correct folder with cd ui
 
-    they need to be developed into specific tasks and connected to constraints and other meaningful documentation.''
+# How to test
+To test the whole project, enter:
+	“mvn test”
+From the project directory.
+To test individual modules, enter the given module, and run the same command. 
+
