@@ -64,6 +64,14 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- MaterialFX -->
+        <dependency>
+            <groupId>io.github.palexdev</groupId>
+            <artifactId>materialfx</artifactId>
+            <version>11.12.0</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
