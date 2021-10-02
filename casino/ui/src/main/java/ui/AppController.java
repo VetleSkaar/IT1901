@@ -2,12 +2,10 @@ package ui;
 
 // import core.Casino;
 
+import io.github.palexdev.materialfx.controls.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 
 public class AppController {
@@ -15,16 +13,16 @@ public class AppController {
     // ------------Elements-----------------//
 
     @FXML
-    private TextField signInUser;
+    private MFXTextField signInUser;
 
     @FXML
-    private PasswordField signInPassword;
+    private MFXPasswordField signInPassword;
 
     @FXML
-    private Button signInBtn;
+    private MFXButton signInBtn;
 
     @FXML
-    private Button newUserBtn;
+    private MFXButton newUserBtn;
 
     // ------------Functions-----------------//
 
