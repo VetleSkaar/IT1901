@@ -5,8 +5,13 @@ package ui;
 import io.github.palexdev.materialfx.controls.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.stage.Stage;
 
 public class AppController {
 
@@ -28,10 +33,18 @@ public class AppController {
 
     @FXML
     void onNewUserClick(ActionEvent event) {
-        Alert a = new Alert(AlertType.NONE);
-        a.setAlertType(AlertType.CONFIRMATION);
-        a.setContentText("Confirms that create new user button clicked");
-        a.show();
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("NewUser.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("New User");
+            stage.setScene(new Scene(root));
+            stage.show();
+            ((Node) event.getSource()).getScene().getWindow().hide();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
