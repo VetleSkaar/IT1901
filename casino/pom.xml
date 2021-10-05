@@ -56,20 +56,14 @@
                         <skipTests>${skipTests}</skipTests>
                     </configuration>
                 </plugin>
+
                 <!-- Run the checkstyle code quality tool -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
-                    <version>3.1.2</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>com.puppycrawl.tools</groupId>
-                            <artifactId>checkstyle</artifactId>
-                            <version>9.0</version>
-                        </dependency>
-                    </dependencies>
+                    <version>3.1.1</version>
                     <configuration>
-                        <configLocation>google_checks.xml</configLocation>
+                        <configLocation>config/checkstyle/custom_google_checks.xml</configLocation>
                         <encoding>UTF-8</encoding>
                         <consoleOutput>true</consoleOutput>
                         <failsOnError>true</failsOnError>
@@ -85,6 +79,7 @@
                         </execution>
                     </executions>
                 </plugin>
+
                 <!-- Run the spotbugs code quality tool -->
                 <plugin>
                     <groupId>com.github.spotbugs</groupId>
