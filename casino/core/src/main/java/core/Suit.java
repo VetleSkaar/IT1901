@@ -1,5 +1,9 @@
 package core;
 
+/**
+ * A class for managing the suit of a card. 
+ */
+
 public class Suit {
 
     private final String suit;

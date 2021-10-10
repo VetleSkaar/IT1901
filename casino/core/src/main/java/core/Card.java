@@ -1,5 +1,9 @@
 package core;
 
+/**
+ * Contains logic for handling a standard 52-card type card. Uses help classes Suit and Value
+ */
+
 public class Card{
     private final Suit suit;
     private final Value value;
