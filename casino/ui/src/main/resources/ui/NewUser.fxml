@@ -40,7 +40,7 @@
                         <Font size="19.0" />
                      </font>
                   </MFXLabel>
-                  <MFXCheckbox fx:id="termsCheckBox" checkedColor="#d01922" layoutX="57.0" layoutY="445.0" prefHeight="31.0" prefWidth="214.0" text="I have read and agreed to the " AnchorPane.leftAnchor="57.0" AnchorPane.topAnchor="445.0">
+                  <MFXCheckbox fx:id="termsCheckBox" checkedColor="#d01922" layoutX="57.0" layoutY="445.0" onAction="#checkIfAgreed" prefHeight="31.0" prefWidth="214.0" text="I have read and agreed to the " AnchorPane.leftAnchor="57.0" AnchorPane.topAnchor="445.0">
                      <font>
                         <Font size="13.0" />
                      </font>
@@ -53,7 +53,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </MFXLabel>
-                  <MFXButton fx:id="newUserCreateBtn" buttonType="RAISED" defaultButton="true" disable="true" layoutX="61.0" layoutY="378.0" prefHeight="40.0" prefWidth="134.0" rippleColor="#d72525" style="-fx-background-color: #612022;" text="Create new user" textFill="WHITE" AnchorPane.leftAnchor="61.0" AnchorPane.topAnchor="378.0">
+                  <MFXButton fx:id="newUserCreateBtn" buttonType="RAISED" defaultButton="true" disable="true" layoutX="61.0" layoutY="378.0" onAction="#onNewUserBtnClick" prefHeight="40.0" prefWidth="134.0" rippleColor="#d72525" style="-fx-background-color: #612022;" text="Create new user" textFill="WHITE" AnchorPane.leftAnchor="61.0" AnchorPane.topAnchor="378.0">
                      <font>
                         <Font size="15.0" />
                      </font>
