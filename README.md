@@ -51,7 +51,6 @@ Our application is localized in our UI-module, and uses a javafx plugin.To run t
 	“cd casino”
 	"mvn clean"
 	"mvn install"
-	“mvn compile”
 	“cd ui”
 	Run with “mvn javafx:run”
 	
@@ -60,7 +59,6 @@ If running with gitpod, press the button and wait for it to load a virtual machi
 Go into correct folder with:
 
 	"mvn install"
-	“mvn compile”
 	“cd ui”
 	Run with “mvn javafx:run”
 	Open port view 6080 to see the application
