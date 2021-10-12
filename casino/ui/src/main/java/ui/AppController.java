@@ -49,10 +49,24 @@ public class AppController {
 
     @FXML
     void onSignInClick(ActionEvent event) {
-        Alert a = new Alert(AlertType.NONE);
-        a.setAlertType(AlertType.CONFIRMATION);
-        a.setContentText("Confirms that sign in button clicked");
-        a.show();
+        if(signInUser.getText().isEmpty()){
+            Alert nameFail = new Alert(AlertType.ERROR);
+            nameFail.setHeaderText("Failure");
+            nameFail.setContentText("Please enter your username");
+            nameFail.showAndWait();
+        }
+        else if(signInPassword.getText().isEmpty()){
+            Alert passFail = new Alert(AlertType.ERROR);
+            passFail.setHeaderText("Failure");
+            passFail.setContentText("Please enter your password");
+            passFail.showAndWait();
+        }
+        else{
+            Alert a = new Alert(AlertType.NONE);
+            a.setAlertType(AlertType.CONFIRMATION);
+            a.setContentText("Confirms that sign in button clicked");
+            a.show();
+        }
 
     }
 
