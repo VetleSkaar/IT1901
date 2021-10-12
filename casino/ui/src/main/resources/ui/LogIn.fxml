@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXLabel?>
+<?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -14,28 +15,36 @@
          <children>
             <AnchorPane layoutX="344.0" layoutY="58.0" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="395.0" prefWidth="297.0" style="-fx-background-color: white; -fx-background-radius: 1em;" AnchorPane.bottomAnchor="58.0" AnchorPane.leftAnchor="345.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="58.0">
                <children>
-                  <Label layoutX="62.0" layoutY="27.0" prefHeight="40.0" prefWidth="174.0" text="Sign In" AnchorPane.leftAnchor="62.0" AnchorPane.rightAnchor="61.0" AnchorPane.topAnchor="27.0">
-                     <font>
-                        <Font size="23.0" />
-                     </font>
-                  </Label>
-                  <TextField layoutX="62.0" layoutY="79.0" maxWidth="-Infinity" prefHeight="55.0" prefWidth="216.0" promptText="Username" AnchorPane.leftAnchor="62.0" AnchorPane.rightAnchor="19.0">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </TextField>
-                  <PasswordField layoutX="62.0" layoutY="156.0" maxWidth="-Infinity" prefHeight="55.0" prefWidth="216.0" promptText="Password" AnchorPane.leftAnchor="62.0" AnchorPane.rightAnchor="19.0">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </PasswordField>
                   <Label layoutX="62.0" layoutY="441.0" prefHeight="17.0" prefWidth="216.0" text="New user?" AnchorPane.leftAnchor="62.0" AnchorPane.topAnchor="441.0">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Button fx:id="signInBtn" layoutX="62.0" layoutY="239.0" mnemonicParsing="false" onAction="#onSignInClick" prefHeight="31.0" prefWidth="78.0" text="Sign In" AnchorPane.leftAnchor="62.0" AnchorPane.topAnchor="239.0" />
-                  <Button fx:id="newUserBtn" layoutX="62.0" layoutY="490.0" mnemonicParsing="false" onAction="#onNewUserClick" prefHeight="31.0" prefWidth="108.0" text="Create new user" AnchorPane.leftAnchor="62.0" AnchorPane.topAnchor="490.0" />
+                  <MFXTextField fx:id="signInUser" layoutX="62.0" layoutY="76.0" lineColor="#e12323" prefHeight="55.0" prefWidth="216.0" promptText="Username" AnchorPane.leftAnchor="62.0" AnchorPane.rightAnchor="19.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </MFXTextField>
+                  <MFXPasswordField fx:id="signInPassword" layoutX="62.0" layoutY="164.0" lineColor="#e12323" prefHeight="55.0" prefWidth="187.0" promptText="Password">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </MFXPasswordField>
+                  <MFXButton fx:id="signInBtn" buttonType="RAISED" layoutX="62.0" layoutY="245.0" onAction="#onSignInClick" prefHeight="40.0" prefWidth="91.0" rippleColor="#d62727" style="-fx-background-color: #612022;" text="Login" textFill="WHITE" AnchorPane.leftAnchor="62.0" AnchorPane.topAnchor="245.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </MFXButton>
+                  <MFXButton fx:id="newUserBtn" buttonType="RAISED" layoutX="62.0" layoutY="486.0" onAction="#onNewUserClick" prefHeight="40.0" prefWidth="134.0" rippleColor="#d72525" style="-fx-background-color: #612022;" text="Create new user" textFill="WHITE" AnchorPane.leftAnchor="62.0" AnchorPane.topAnchor="486.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </MFXButton>
+                  <MFXLabel alignment="CENTER_LEFT" layoutX="57.0" layoutY="30.0" lineColor="#dd1717" prefHeight="34.0" prefWidth="101.0" text="Login">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </MFXLabel>
                </children></AnchorPane>
             <AnchorPane layoutX="14.0" layoutY="42.0" prefHeight="425.0" prefWidth="360.0" style="-fx-background-color: linear-gradient(to right bottom, #21070b, #530d1b, #8a0421, #c2001f, #f90b0b); -fx-background-radius: 1em;" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="40.0">
                <children>
@@ -46,7 +55,7 @@
                               <Font size="56.0" />
                            </font>
                         </Label>
-                        <Label text="Slots &amp; Blackjack" textFill="WHITE">
+                        <Label alignment="CENTER" prefHeight="31.0" prefWidth="163.0" text="Blackjack" textFill="WHITE">
                            <font>
                               <Font size="21.0" />
                            </font>
