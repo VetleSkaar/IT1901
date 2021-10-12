@@ -24,6 +24,16 @@ As necessary
 
 Every module contains a pom.xml
 
+
+# Arkitektur diagram
+
+```plantuml
+frame "core" {
+  [casino.core]
+}
+
+```
+
 # Core
 
 Casino core contains code for the game logic needed. As per the first release it contains code for the Player-class and tests for the Player class.
