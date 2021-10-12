@@ -4,19 +4,20 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * A class for storing default values for blackjack game. contains cardvalues and actions,
+ * A class for storing default values for blackjack game. contains cardvalues
+ * and actions,
  */
 
 public class BlackjackDefaults {
 
     static final Player DEALER = new Player("Dealer");
 
-    private static final Suit SPADE = new Suit("Spade", "♠","♤");
-    private static final Suit DIAMOND = new Suit("Diamond", "♦","♢");
-    private static final Suit CLUB = new Suit("Club", "♣","♧");
-    private static final Suit HEART = new Suit("Heart", "♥","♡");
+    private static final Suit SPADE = new Suit("Spade", "♠", "♤");
+    private static final Suit DIAMOND = new Suit("Diamond", "♦", "♢");
+    private static final Suit CLUB = new Suit("Club", "♣", "♧");
+    private static final Suit HEART = new Suit("Heart", "♥", "♡");
 
-    static final List<Suit> SUITS = Arrays.asList(SPADE,DIAMOND,CLUB,HEART);
+    static final List<Suit> SUITS = Arrays.asList(SPADE, DIAMOND, CLUB, HEART);
 
     private static final Value KING = new Value("King", 13, 10);
     private static final Value QUEEN = new Value("Queen", 12, 10);
@@ -32,8 +33,9 @@ public class BlackjackDefaults {
     private static final Value DEUCE = new Value("Deuce", 2);
     private static final Value ACE = new Value("Ace", 14, 11, 1);
 
-    static final List<Value> VALUES = Arrays.asList(KING,QUEEN,JACK,TEN,NINE,EIGHT,SEVEN,SIX,FIVE,FOUR,THREE,DEUCE,ACE);
-    static final List<Value> FACE_VALUES = Arrays.asList(KING,QUEEN,JACK);
+    static final List<Value> VALUES = Arrays.asList(KING, QUEEN, JACK, TEN, NINE, EIGHT, SEVEN, SIX, FIVE, FOUR, THREE,
+            DEUCE, ACE);
+    static final List<Value> FACE_VALUES = Arrays.asList(KING, QUEEN, JACK);
 
     static final Action HIT = new Action("Hit", true);
     static final Action STAND = new Action("Stand", true);
@@ -43,16 +45,14 @@ public class BlackjackDefaults {
 
     static final List<Action> ACTIONS = Arrays.asList(HIT, STAND, DOUBLE_DOWN, SPLIT, SURRENDER);
 
-    void setAllAvailable(boolean isAvailable){
-        for (Action action:
-                ACTIONS) {
+    void setAllAvailable(boolean isAvailable) {
+        for (Action action : ACTIONS) {
             action.setAvailable(isAvailable);
         }
     }
 
-    void setAvailableMult(boolean isAvailable, Action... actions){
-        for (Action action:
-             actions) {
+    void setAvailableMult(boolean isAvailable, Action... actions) {
+        for (Action action : actions) {
             action.setAvailable(isAvailable);
         }
     }

@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The contestants in Blackjack game. handles player name, balance, in game sums and cards in hand. 
+ * The contestants in Blackjack game. handles player name, balance, in game sums
+ * and cards in hand.
  */
 
 public class Player {
@@ -12,10 +13,10 @@ public class Player {
     private String name;
     private int balance;
 
-        // variables for Blackjack
-        private final List<Card> hand = new ArrayList<>();
-        private int hardSum = 0;
-        private int softSum = 0;
+    // variables for Blackjack
+    private final List<Card> hand = new ArrayList<>();
+    private int hardSum = 0;
+    private int softSum = 0;
 
     public Player(String name) {
         if (name.isBlank()) {
@@ -38,12 +39,13 @@ public class Player {
 
     /**
      * Sets the players name
+     * 
      * @param String name
      */
     public void setName(String name) {
-        if(name.isBlank()) {
+        if (name.isBlank()) {
             throw new IllegalArgumentException("Player name cannot be blank.");
-        } else{
+        } else {
             this.name = name;
         }
     }
@@ -54,18 +56,19 @@ public class Player {
 
     /**
      * Sets the players balance
+     * 
      * @param int balance
      * @throws IllegalArgumentException if balance < 0
      */
     public void setBalance(int balance) {
-        if(balance < 0) {
+        if (balance < 0) {
             throw new IllegalArgumentException("Balance must be positive.");
-        } else{
+        } else {
             this.balance = balance;
         }
     }
 
-        /**
+    /**
      * Value must be positive.
      *
      * @param value to add to the balance
@@ -95,6 +98,7 @@ public class Player {
 
     /**
      * sets players name and balance to themself.
+     * 
      * @param player
      */
     public void updatePlayer(Player player) {
@@ -103,7 +107,7 @@ public class Player {
     }
 
     /**
-     * @return cards in players hand. 
+     * @return cards in players hand.
      */
     public List<Card> getHand() {
         return hand;
@@ -120,13 +124,14 @@ public class Player {
 
     /**
      * 
-     * @return highest current cardssum in the game. 
+     * @return highest current cardssum in the game.
      */
     public int getHardSum() {
         return hardSum;
     }
+
     /**
-     * @return sum of cards in players hand. 
+     * @return sum of cards in players hand.
      */
     public int getSoftSum() {
         return softSum;
@@ -134,11 +139,12 @@ public class Player {
 
     /**
      * 
-     * @return a string containing softsum and hardsum if they're different and below 21. Else returns softsum
+     * @return a string containing softsum and hardsum if they're different and
+     *         below 21. Else returns softsum
      */
-    public String getTotalSum(){
-        if (hardSum != softSum && hardSum < 21){
-            return softSum+"/"+hardSum;
+    public String getTotalSum() {
+        if (hardSum != softSum && hardSum < 21) {
+            return softSum + "/" + hardSum;
         }
         return Integer.toString(softSum);
     }

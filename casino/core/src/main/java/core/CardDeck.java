@@ -2,11 +2,11 @@ package core;
 
 import java.util.ArrayList;
 
-
 import static core.BlackjackDefaults.*;
 
 /**
- * A list of Card class elememts. contains methods for shuffling and drawing cards
+ * A list of Card class elememts. contains methods for shuffling and drawing
+ * cards
  */
 
 public class CardDeck {
@@ -24,14 +24,16 @@ public class CardDeck {
                 sortedDeck.add(new Card(suit, value));
             }
         }
-         deck = sortedDeck;
+        deck = sortedDeck;
     }
 
     /**
-     * creates numberOfTimes amount of carddecks, then shuffles them together to one deck. 
-     * @param numberOfTimes 
+     * creates numberOfTimes amount of carddecks, then shuffles them together to one
+     * deck.
+     * 
+     * @param numberOfTimes
      */
-    public void MultiplyAndShuffleDeck(int numberOfTimes){
+    public void multiplyAndShuffleDeck(int numberOfTimes) {
         ArrayList<Card> deck = new ArrayList<>();
 
         for (int i = 0; i < numberOfTimes; i++) {
@@ -39,14 +41,15 @@ public class CardDeck {
         }
         java.util.Collections.shuffle(deck);
 
-       this.deck = deck;
+        this.deck = deck;
     }
+
     /**
-     * @return and removes top card from deck. 
+     * @return and removes top card from deck.
      */
     public Card draw() {
         Card newCard = deck.remove(0); // removes the card on the top of the deck
         return newCard;
     }
-    
+
 }

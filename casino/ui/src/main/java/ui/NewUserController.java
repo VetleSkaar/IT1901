@@ -1,14 +1,13 @@
 package ui;
 
-import java.io.IOException;
-import java.time.LocalDate;
-
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXCheckbox;
 import io.github.palexdev.materialfx.controls.MFXDatePicker;
 import io.github.palexdev.materialfx.controls.MFXLabel;
 import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXTextField;
+import java.io.IOException;
+import java.time.LocalDate;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -41,32 +40,29 @@ public class NewUserController {
     private MFXButton newUserCreateBtn;
 
     @FXML
-    boolean validation(ActionEvent event) throws IOException{
+    boolean validation(ActionEvent event) throws IOException {
         LocalDate minAge = LocalDate.now().minusYears(18);
         boolean isValid = false;
-        try{
-            if(newUserName.getText().isEmpty()){
+        try {
+            if (newUserName.getText().isEmpty()) {
                 Alert nameFail = new Alert(AlertType.ERROR);
                 nameFail.setHeaderText("Failure");
                 nameFail.setContentText("You must type something as username");
                 nameFail.showAndWait();
-            }
-            else if(newUserPassword.getText().isEmpty()){
+            } else if (newUserPassword.getText().isEmpty()) {
                 Alert passFail = new Alert(AlertType.ERROR);
                 passFail.setHeaderText("Failure");
                 passFail.setContentText("You must type something as password");
                 passFail.showAndWait();
-            }
-            else if(dateOfBirth.getDate().isAfter(minAge)){
+            } else if (dateOfBirth.getDate().isAfter(minAge)) {
                 Alert dateFail = new Alert(AlertType.ERROR);
                 dateFail.setHeaderText("Failure");
                 dateFail.setContentText("You must be 18 or older");
                 dateFail.showAndWait();
-            }
-            else {
+            } else {
                 isValid = true;
             }
-        } catch(NullPointerException e){
+        } catch (NullPointerException e) {
             Alert dateFail = new Alert(AlertType.ERROR);
             dateFail.setHeaderText("Failure");
             dateFail.setContentText("Please enter your date of birth");
@@ -77,10 +73,9 @@ public class NewUserController {
 
     @FXML
     void checkIfAgreed() {
-        if(termsCheckBox.isSelected()){
+        if (termsCheckBox.isSelected()) {
             newUserCreateBtn.setDisable(false);
-        }
-        else {
+        } else {
             newUserCreateBtn.setDisable(true);
         }
     }
@@ -95,7 +90,7 @@ public class NewUserController {
     }
 
     @FXML
-    void returnToLogIn(ActionEvent event) throws IOException{
+    void returnToLogIn(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Login.fxml"));
         Parent root = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
@@ -111,7 +106,7 @@ public class NewUserController {
 
     @FXML
     void onNewUserBtnClick(ActionEvent event) throws IOException {
-        if(validation(event) == true){
+        if (validation(event) == true) {
             returnToLogIn(event);
         }
     }

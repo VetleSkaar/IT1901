@@ -9,7 +9,7 @@ public class Action {
     private boolean isAvailable;
     private final String NAME;
 
-    public Action(String name, boolean isAvailable){
+    public Action(String name, boolean isAvailable) {
         this.NAME = name;
         this.isAvailable = isAvailable;
     }
@@ -27,4 +27,3 @@ public class Action {
     }
 
 }
-

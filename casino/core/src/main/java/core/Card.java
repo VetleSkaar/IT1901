@@ -1,14 +1,15 @@
 package core;
 
 /**
- * Contains logic for handling a standard 52-card type card. Uses help classes Suit and Value
+ * Contains logic for handling a standard 52-card type card. Uses help classes
+ * Suit and Value
  */
 
-public class Card{
+public class Card {
     private final Suit suit;
     private final Value value;
 
-    public Card(Suit suit, Value value){
+    public Card(Suit suit, Value value) {
         this.suit = suit;
         this.value = value;
     }
@@ -20,8 +21,9 @@ public class Card{
     public Value getValue() {
         return value;
     }
+
     @Override
-    public String toString(){
+    public String toString() {
         String result = "";
 
         result += suit.getSymbolW();
