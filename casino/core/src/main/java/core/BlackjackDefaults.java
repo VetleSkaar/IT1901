@@ -10,7 +10,7 @@ import java.util.List;
 
 public class BlackjackDefaults {
 
-    static final Player DEALER = new Player("Dealer");
+    static final Player DEALER = new Player(new UserInfo("Dealer"));
 
     private static final Suit SPADE = new Suit("Spade", "♠", "♤");
     private static final Suit DIAMOND = new Suit("Diamond", "♦", "♢");

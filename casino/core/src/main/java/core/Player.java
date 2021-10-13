@@ -4,54 +4,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The contestants in Blackjack game. handles player name, balance, in game sums
- * and cards in hand.
+ * The contestants in Blackjack game. handles in game sums and cards.
  */
 
 public class Player {
 
-    private String name;
-    private int balance;
+    private UserInfo userInfo;
 
     // variables for Blackjack
     private final List<Card> hand = new ArrayList<>();
     private int hardSum = 0;
     private int softSum = 0;
 
-    public Player(String name) {
-        if (name.isBlank()) {
-            throw new IllegalArgumentException("Player name cannot be blank.");
-        }
-        this.name = name;
+    public Player(UserInfo user) {
+
+        this.userInfo = user;
     }
 
-    public Player(String name, int balance) {
-        this(name);
-        if (balance < 0) {
-            throw new IllegalArgumentException("Player balance must be positive.");
-        }
-        this.balance = balance;
+    public void setUserInfo(UserInfo user) {
+        this.userInfo = user;
+    }
+
+    public UserInfo getUserInfo() {
+        return userInfo;
     }
 
     public String getName() {
-        return this.name;
-    }
-
-    /**
-     * Sets the players name
-     * 
-     * @param String name
-     */
-    public void setName(String name) {
-        if (name.isBlank()) {
-            throw new IllegalArgumentException("Player name cannot be blank.");
-        } else {
-            this.name = name;
-        }
+        return userInfo.getUsername();
     }
 
     public int getBalance() {
-        return this.balance;
+        return userInfo.getBalance();
     }
 
     /**
@@ -60,40 +43,16 @@ public class Player {
      * @param int balance
      * @throws IllegalArgumentException if balance < 0
      */
-    public void setBalance(int balance) {
-        if (balance < 0) {
-            throw new IllegalArgumentException("Balance must be positive.");
-        } else {
-            this.balance = balance;
-        }
+    public void setBalance(int balance) throws IllegalArgumentException {
+        userInfo.setBalance(balance);
     }
 
-    /**
-     * Value must be positive.
-     *
-     * @param value to add to the balance
-     * @throws IllegalArgumentException if value < 0
-     */
-    public void addToBalance(int value) {
-        if (value < 0) {
-            throw new IllegalArgumentException("Value to be added must be positive.");
-        } else {
-            this.balance += value;
-        }
+    public void addToBalance(int value) throws IllegalArgumentException {
+        userInfo.addToBalance(value);
     }
 
-    /**
-     * Value cannot be greater than players balance.
-     *
-     * @param value to remove from the value
-     * @throws IllegalArgumentException if value is greater than players balance
-     */
-    public void removeFromBalance(int value) {
-        if (value > balance) {
-            throw new IllegalArgumentException("Value to be removed cannot be greater than the players balance.");
-        } else {
-            this.balance -= value;
-        }
+    public void removeFromBalance(int value) throws IllegalArgumentException {
+        userInfo.removeFromBalance(value);
     }
 
     /**
@@ -102,8 +61,7 @@ public class Player {
      * @param player
      */
     public void updatePlayer(Player player) {
-        setName(player.name);
-        setBalance(player.balance);
+        setUserInfo(player.getUserInfo());
     }
 
     /**
