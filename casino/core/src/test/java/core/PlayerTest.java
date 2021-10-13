@@ -1,88 +1,64 @@
 package core;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
 
 public class PlayerTest {
 
-    @BeforeEach
-    public void setUp() {
-    }
-
     @Test
     public void test_new_player() {
-        Player player_only_name = new Player("test");
+        UserInfo user = new UserInfo("name", "password");
+        Player player1 = new Player(user);
+        assertEquals(player1.getBalance(), 10000);
+        assertEquals(player1.getName(), "name");
 
-        assertEquals("test", player_only_name.getName());
-        assertEquals(0, player_only_name.getBalance(), 0);
-    }
-
-    @Test
-    public void test_new_player_blank_name() {
-        Player[] player = new Player[2];
-
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            player[0] = new Player("");
-            player[1] = new Player("", 100);
-        });
-
-        String expectedMessage = "Player name cannot be blank.";
-        String actualMessage = exception.getMessage();
-
-        assertTrue(actualMessage.contains(expectedMessage));
-        assertNull(player[0]);
-        assertNull(player[1]);
-
-    }
-
-    @Test
-    public void test_new_player_0_bal() {
-        Player player_only_name = new Player("test");
-        Player player_bal_0 = new Player("test", 0);
-
-        assertEquals(player_only_name.getBalance(), player_bal_0.getBalance(), 0);
-    }
-
-    @Test
-    public void test_new_player_negative_balance() {
-        Player[] player = new Player[1];
-
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            player[0] = new Player("test", -100);
-        });
-
-        String expectedMessage = "Player balance must be positive.";
-        String actualMessage = exception.getMessage();
-
-        assertTrue(actualMessage.contains(expectedMessage));
-        assertNull(player[0]);
     }
 
     @Test
     public void test_update_player() {
-        // TODO
+        UserInfo user = new UserInfo("name", "password");
+        Player player1 = new Player(user);
+        UserInfo user2 = new UserInfo("name2", "password2");
+        Player player2 = new Player(user2);
+        player1.updatePlayer(player2);
+        assertEquals(player1.getName(), "name2");
     }
 
     @Test
     public void test_add_to__balance() {
-        // TODO
+        UserInfo user = new UserInfo("name", "password");
+        Player player = new Player(user);
+        player.addToBalance(1000);
+        assertEquals(player.getBalance(), 11000);
     }
 
     @Test
     public void test_add_to_player_balance_neg() {
-        // TODO
+        UserInfo user = new UserInfo("name", "password");
+        Player player = new Player(user);
+        assertThrows(IllegalArgumentException.class, () -> {
+            player.addToBalance(-1000);
+        }, "Cannot add a negativ value to balance");
     }
 
     @Test
     public void test_remove_from_player_balance() {
-        // TODO
+        UserInfo user = new UserInfo("name", "password");
+        Player player = new Player(user);
+        player.removeFromBalance(1000);
+        assertEquals(player.getBalance(), 9000);
+
     }
 
     @Test
     public void test_remove_too_much_from_player_balance() {
-        // TODO
+        UserInfo user = new UserInfo("name", "password");
+        Player player = new Player(user);
+        assertThrows(IllegalArgumentException.class, () -> {
+            player.removeFromBalance(11000);
+            ;
+        }, "Cannot remove higher value than is in balance balance");
 
     }
 }
