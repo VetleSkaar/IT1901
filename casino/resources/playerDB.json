@@ -1,0 +1,18 @@
+{
+  "testPlayer1" : {
+    "name" : "testPlayer1",
+    "balance" : 10000
+  },
+  "testPlayer2" : {
+    "name" : "testPlayer2",
+    "balance" : 600
+  },
+  "testPlayer3" : {
+    "name" : "testPlayer3",
+    "balance" : 4000
+  },
+  "testPlayer4" : {
+    "name" : "testPlayer4",
+    "balance" : 200
+  }
+}
