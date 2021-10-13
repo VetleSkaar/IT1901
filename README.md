@@ -30,7 +30,29 @@ Every module contains a pom.xml
 ```plantuml
 frame "core" {
   [casino.core]
+  [casino.json]
 }
+
+frame "ui" {
+  [casino.ui]
+}
+
+frame "ui" {
+  [casino.ui]
+}
+
+frame "javafx" {
+  [fxml]
+}
+
+[Jackson]
+
+
+[casino.ui] --> [fxml]
+[casino.ui] --> [casino.json]
+[casino.ui] --> [casino.core]
+[casino.json] --> [Jackson]
+
 
 ```
 
