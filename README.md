@@ -69,6 +69,7 @@ Throughout our programming, we talk and communicate with each other online as th
 
 We have also tried out pair programming, where we take turns writing code. In our instance, we found pair programming to be okay, but we also felt that we could get the same job done using screen sharing and talking online using Discord. 
 
+For tackling different issues and development tasks, we found that creating new branches that tackled those issues worked well.
  
  
 
