@@ -5,9 +5,9 @@ package core;
  */
 
 public class UserInfo {
-    private String username;
-    private String password;
-    private int balance;
+    public String username;
+    public String password;
+    public int balance;
 
     /**
      * This method is only to be used by DEALER. all players needs username and
@@ -21,6 +21,10 @@ public class UserInfo {
         this.username = username;
         this.password = password;
         this.balance = 10000;
+    }
+
+    public UserInfo() {
+        super();
     }
 
     /**

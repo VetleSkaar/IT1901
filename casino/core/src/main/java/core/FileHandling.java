@@ -11,7 +11,7 @@ import java.util.List;
 
 public class FileHandling {
 
-    public static List<Player> playerDB = new ArrayList<Player>();
+    public static List<UserInfo> playerDB = new ArrayList<UserInfo>();
 
     public void newUser(String username, String password) {
         // TODO
@@ -21,11 +21,11 @@ public class FileHandling {
         try {
             ObjectMapper mapper = new ObjectMapper();
 
-            List<Player> tempList = Arrays
-                    .asList(mapper.readValue(Paths.get("casino/resources/playerDB.json").toFile(), Player[].class));
+            List<UserInfo> tempList = Arrays
+                    .asList(mapper.readValue(Paths.get("casino/resources/playerDB.json").toFile(), UserInfo[].class));
 
-            for (Player pl : tempList) {
-                System.out.println(pl.getName());
+            for (UserInfo pl : tempList) {
+                System.out.println(pl.getPassword());
             }
 
         } catch (Exception e) {
@@ -34,7 +34,7 @@ public class FileHandling {
 
     }
 
-    public static void writeData() { // Functional
+    public static void writeData() {
         ObjectMapper mapper = new ObjectMapper();
         ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
 
