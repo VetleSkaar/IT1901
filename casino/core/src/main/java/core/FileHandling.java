@@ -13,20 +13,28 @@ public class FileHandling {
 
     public static List<UserInfo> playerDB = new ArrayList<UserInfo>();
 
-    public void newUser(String username, String password) {
-        // TODO
+    public static void newUser(UserInfo info) {
+        playerDB.add(info);
+        writeData();
+    }
+
+    public static void updateUserInfo(UserInfo info) {
+        readData();
+
+        for (UserInfo userInfo : playerDB) {
+            if(userInfo.getUsername() == info.getUsername()) {
+                userInfo.setBalance(info.getBalance());
+                writeData();
+            }
+        }
     }
 
     public static void readData() {
         try {
             ObjectMapper mapper = new ObjectMapper();
 
-            List<UserInfo> tempList = Arrays
+            playerDB = Arrays
                     .asList(mapper.readValue(Paths.get("casino/resources/playerDB.json").toFile(), UserInfo[].class));
-
-            for (UserInfo pl : tempList) {
-                System.out.println(pl.getPassword());
-            }
 
         } catch (Exception e) {
             e.printStackTrace();

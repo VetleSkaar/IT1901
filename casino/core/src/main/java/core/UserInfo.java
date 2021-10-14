@@ -21,6 +21,8 @@ public class UserInfo {
         this.username = username;
         this.password = password;
         this.balance = 10000;
+
+        FileHandling.newUser(this);
     }
 
     public UserInfo() {
@@ -39,6 +41,7 @@ public class UserInfo {
         } else {
             this.balance = balance;
         }
+        FileHandling.updateUserInfo(this);
     }
 
     /**
@@ -53,6 +56,7 @@ public class UserInfo {
         } else {
             this.balance -= value;
         }
+        FileHandling.updateUserInfo(this);
     }
 
     /**
@@ -67,6 +71,7 @@ public class UserInfo {
         } else {
             this.balance += value;
         }
+        FileHandling.updateUserInfo(this);
     }
 
     public int getBalance() {
