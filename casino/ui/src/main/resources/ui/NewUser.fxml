@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXCheckbox?>
+<?import io.github.palexdev.materialfx.controls.MFXDatePicker?>
+<?import io.github.palexdev.materialfx.controls.MFXLabel?>
+<?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="700.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.NewUserController">
+   <children>
+      <AnchorPane layoutX="37.0" layoutY="48.0" prefHeight="666.0" prefWidth="738.0" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="47.0">
+         <children>
+            <AnchorPane layoutX="253.0" layoutY="68.0" prefHeight="520.0" prefWidth="371.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="68.0" AnchorPane.leftAnchor="253.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="68.0">
+               <children>
+                  <MFXLabel alignment="CENTER_LEFT" layoutX="68.0" layoutY="33.0" lineColor="#da1a1a" prefHeight="50.0" prefWidth="245.0" text="Create New User" AnchorPane.leftAnchor="68.0" AnchorPane.rightAnchor="61.0" AnchorPane.topAnchor="27.0">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </MFXLabel>
+                  <MFXTextField fx:id="newUserName" layoutX="68.0" layoutY="104.0" lineColor="#e12323" prefHeight="55.0" prefWidth="260.0" promptText="Username" AnchorPane.leftAnchor="68.0" AnchorPane.rightAnchor="61.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </MFXTextField>
+                  <MFXPasswordField fx:id="newUserPassword" layoutX="68.0" layoutY="181.0" lineColor="#e12323" prefHeight="55.0" prefWidth="231.0" promptText="Password" AnchorPane.leftAnchor="68.0" AnchorPane.rightAnchor="90.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </MFXPasswordField>
+                  <MFXDatePicker fx:id="dateOfBirth" closeOnDaySelected="false" layoutX="68.0" layoutY="302.0" lineColor="#544e4eb2" lineStrokeCap="SQUARE" maxHeight="-Infinity" maxWidth="-Infinity" pickerColor="#e11111" prefHeight="43.0" prefWidth="151.0" AnchorPane.leftAnchor="68.0" AnchorPane.rightAnchor="170.0" />
+                  <MFXLabel alignment="TOP_LEFT" layoutX="57.0" layoutY="268.0" lineColor="#e11212" lineStrokeWidth="0.0" prefHeight="27.0" prefWidth="141.0" text="Date of birth">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </MFXLabel>
+                  <MFXCheckbox fx:id="termsCheckBox" checkedColor="#d01922" layoutX="57.0" layoutY="445.0" onAction="#checkIfAgreed" prefHeight="31.0" prefWidth="214.0" text="I have read and agreed to the " AnchorPane.leftAnchor="57.0" AnchorPane.topAnchor="445.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </MFXCheckbox>
+                  <MFXLabel fx:id="termsTextBtn" alignment="CENTER_LEFT" layoutX="87.0" layoutY="469.0" lineStrokeWidth="0.0" onMouseClicked="#onTermsBtnClick" prefHeight="13.0" prefWidth="142.0" text="terms and conditions" AnchorPane.leftAnchor="87.0" AnchorPane.topAnchor="469.0">
+                     <textFill>
+                        <Color red="0.8026315569877625" green="0.06317007541656494" blue="0.06317007541656494" />
+                     </textFill>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </MFXLabel>
+                  <MFXButton fx:id="newUserCreateBtn" buttonType="RAISED" defaultButton="true" disable="true" layoutX="61.0" layoutY="378.0" onAction="#onNewUserBtnClick" prefHeight="40.0" prefWidth="134.0" rippleColor="#d72525" style="-fx-background-color: #612022;" text="Create new user" textFill="WHITE" AnchorPane.leftAnchor="61.0" AnchorPane.topAnchor="378.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </MFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="22.0" layoutY="22.0" prefHeight="613.0" prefWidth="259.0" style="-fx-background-color: linear-gradient(to right bottom, #21070b, #530d1b, #8a0421, #c2001f, #f90b0b); -fx-background-radius: 1em;" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="40.0">
+               <children>
+                  <VBox alignment="CENTER" layoutX="91.0" maxWidth="1.7976931348623157E308" prefHeight="613.0" prefWidth="270.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="83.0" prefWidth="223.0" text="Casino" textFill="WHITE">
+                           <font>
+                              <Font size="56.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="31.0" prefWidth="214.0" text="Blackjack" textFill="WHITE">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
