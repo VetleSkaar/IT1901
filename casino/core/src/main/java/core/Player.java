@@ -2,8 +2,8 @@ package core;
 
 public class Player {
 
-    private String name;
-    private int balance;
+    public String name;
+    public int balance;
 
     public Player(String name) {
         if (name.isBlank()) {
@@ -18,6 +18,10 @@ public class Player {
             throw new IllegalArgumentException("Player balance must be positive.");
         }
         this.balance = balance;
+    }
+
+    public Player() {
+        super();
     }
 
     public String getName() {

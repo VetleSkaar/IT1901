@@ -5,8 +5,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 
 import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class FileHandling {
 
@@ -15,19 +16,21 @@ public class FileHandling {
     public static Player player3 = new Player("testPlayer3", 4000);
     public static Player player4 = new Player("testPlayer4", 200);
 
-    public static Map<String, Player> playerDB = new HashMap<String, Player>();
+    public static List<Player> playerDB = new ArrayList<Player>();
 
-    public void readData() {
-        //ObjectMapper mapper = new ObjectMapper();
-        
+    public void newUser(String username, String password) {
+        //TODO
+    }
+
+    public static void readData() {
         try {
-            //Map<?, ?> tempMap = mapper.readValue(Paths.get("casino/resources/playerDB.json").toFile(), Map.class);
-            
-            playerDB.clear();
+            ObjectMapper mapper = new ObjectMapper();
 
-            /*for(Map.Entry<?, ?> entry : tempMap.entrySet()) {
-                playerDB.put(entry.getKey(), entry.getValue()); //Bug?
-            }*/
+            List<Player> tempList = Arrays.asList(mapper.readValue(Paths.get("casino/resources/playerDB.json").toFile(), Player[].class));
+
+            for (Player pl : tempList) {
+                System.out.println(pl.getName());
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -38,12 +41,7 @@ public class FileHandling {
     public static void writeData() { //Functional
         ObjectMapper mapper = new ObjectMapper();
         ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
-
-        playerDB.put(player1.getName(), player1);
-        playerDB.put(player2.getName(), player2);
-        playerDB.put(player3.getName(), player3);
-        playerDB.put(player4.getName(), player4);
-
+        
         try {
             writer.writeValue(Paths.get("casino/resources/playerDB.json").toFile(), playerDB);
             System.out.println("Player data base written");
