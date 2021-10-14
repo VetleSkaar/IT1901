@@ -11,7 +11,7 @@ import java.util.List;
 
 public class FileHandling {
 
-    public static List<UserInfo> playerDB = new ArrayList<UserInfo>();
+    private final static List<UserInfo> playerDB = new ArrayList<UserInfo>();
 
     public void newUser(String username, String password) {
         // TODO
