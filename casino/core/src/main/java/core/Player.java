@@ -9,8 +9,7 @@ import java.util.List;
 
 public class Player {
 
-    public String name;
-    public int balance;
+    public UserInfo userInfo;
 
     // variables for Blackjack
     private final List<Card> hand = new ArrayList<>();
