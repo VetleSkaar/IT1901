@@ -1,83 +1,53 @@
 package core;
 
-// import java.io.*;
-// import java.util.ArrayList;
-// import java.util.List;
+import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
+
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class FileHandling {
-    // private final String FILE_PATH;
-    // private final User userId; // Temporary name for data type. Type to be used
-    // for users in the casino
 
-    // public FileHandling(Player userId) {
-    // this.userId = userId;
-    // this.FILE_PATH = userId.getName() + "_user_data.txt";
-    // }
+    public static Player player1 = new Player("testPlayer1", 10000);
+    public static Player player2 = new Player("testPlayer2", 600);
+    public static Player player3 = new Player("testPlayer3", 4000);
+    public static Player player4 = new Player("testPlayer4", 200);
 
-    // /**
-    // * Temporary code to be edited later.
-    // *
-    // * Assumes a user with a name or id, and a balance to be read/written to a
-    // .txt
-    // * file. May use a different system to store information in the future.
-    // *
-    // * Currently working with a single user.
-    // *
-    // * TODO: - Add support for several userID`s - Integrate with user handling
-    // * system
-    // *
-    // * @return
-    // * @throws IOException
-    // */
+    public static List<Player> playerDB = new ArrayList<Player>();
 
-    // @Override
-    // public Player readUserState() throws IOException {
-    // List<String> userData = new ArrayList<>();
+    public void newUser(String username, String password) {
+        //TODO
+    }
 
-    // try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
-    // String line;
-    // while ((line = br.readLine()) != null) {
-    // userData.add(line);
-    // }
-    // } catch (IOException e) {
-    // writePlayerState();
-    // return new User();
-    // }
+    public static void readData() {
+        try {
+            ObjectMapper mapper = new ObjectMapper();
 
-    // String name = userData.get(0);
-    // if (name.isBlank()) {
-    // throw new IllegalArgumentException("Invalid file. No user ID found.");
-    // }
+            List<Player> tempList = Arrays.asList(mapper.readValue(Paths.get("casino/resources/playerDB.json").toFile(), Player[].class));
 
-    // if (!userData.get(1).matches("[0-9]+")) {
-    // throw new IllegalArgumentException("Invalid file. User balance is not an
-    // integer.");
-    // } else {
-    // int balance = Integer.parseInt(userData.get(1));
+            for (Player pl : tempList) {
+                System.out.println(pl.getName());
+            }
 
-    // if (userId.isNegative(balance)) {
-    // throw new IllegalArgumentException("Invalid file. User balance must be
-    // positive.");
-    // } else {
-    // return new User();
-    // }
-    // }
-    // }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+    }
 
-    // @Override
-    // public boolean writePlayerState() {
-    // try {
-    // FileWriter fw = new FileWriter(FILE_PATH);
-    // String playerData = userId.getName() + "\n" + userId.getBalance();
+    public static void writeData() { //Functional
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
+        
+        try {
+            writer.writeValue(Paths.get("casino/resources/playerDB.json").toFile(), playerDB);
+            System.out.println("Player data base written");
 
-    // fw.write(playerData);
-    // fw.close();
-
-    // return true;
-
-    // } catch (IOException e) {
-    // e.printStackTrace();
-    // }
-    // return false;
-    // }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
