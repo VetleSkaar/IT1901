@@ -30,9 +30,50 @@ Every module contains a pom.xml
 ```plantuml
 frame "core" {
   [casino.core]
+  [casino.json]
 }
 
+frame "ui" {
+  [casino.ui]
+}
+
+frame "ui" {
+  [casino.ui]
+}
+
+frame "javafx" {
+  [fxml]
+}
+
+[Jackson]
+
+
+[casino.ui] --> [fxml]
+[casino.ui] --> [casino.json]
+[casino.ui] --> [casino.core]
+[casino.json] --> [Jackson]
+
+
 ```
+
+# Code-documentation
+
+In our project we use checkstyle to spot any inconsistencies in our code. 
+In the config folder we have our own custom style based google_checks.xml, where we have made some minor modifactions that ensures that we are consistent in the code that we write.
+
+We also have the spotbugs plugin, that we use to detect bugs that our IDE's cannot detect. It also has a filter in the config folder for certain items to exclude from the checks. 
+
+For testing our test coverage, we use jacoco. This gives us a overview over what in the code that needs testing, and lets us know if we have sufficient test coverage. 
+
+Throughout our programming, we talk and communicate with each other online as that is most practical for our group. 
+
+We have also tried out pair programming, where we take turns writing code. In our instance, we found pair programming to be okay, but we also felt that we could get the same job done using screen sharing and talking online using Discord. 
+
+For tackling different issues and development tasks, we found that creating new branches that tackled those issues worked well.
+ 
+ 
+
+Every Tuesday and when needed the group gets together and goes over what needs to be done, and this has worked well so far. 
 
 # Core
 
