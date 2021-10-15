@@ -40,8 +40,8 @@ public class UserInfo {
             throw new IllegalArgumentException("Balance must be positive.");
         } else {
             this.balance = balance;
+            FileHandling.updateUserInfo(this);
         }
-        FileHandling.updateUserInfo(this);
     }
 
     /**
@@ -55,8 +55,9 @@ public class UserInfo {
             throw new IllegalArgumentException("Value to be removed cannot be greater than the players balance.");
         } else {
             this.balance -= value;
+            FileHandling.updateUserInfo(this);
         }
-        FileHandling.updateUserInfo(this);
+        
     }
 
     /**
@@ -70,8 +71,9 @@ public class UserInfo {
             throw new IllegalArgumentException("Value to be added must be positive.");
         } else {
             this.balance += value;
+            FileHandling.updateUserInfo(this);
         }
-        FileHandling.updateUserInfo(this);
+        
     }
 
     public int getBalance() {
