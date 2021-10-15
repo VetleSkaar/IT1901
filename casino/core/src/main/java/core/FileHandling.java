@@ -11,30 +11,22 @@ import java.util.List;
 
 public class FileHandling {
 
-    public static List<UserInfo> userList = new ArrayList<UserInfo>();
+    public static List<UserInfo> playerDB = new ArrayList<UserInfo>();
 
-    public static void newUser(UserInfo user) {
-        userList.add(user);
-        writeData();
-    }
-
-    public static void updateUserInfo(UserInfo info) {
-        readData();
-
-        for (UserInfo userInfo : userList) {
-            if(userInfo.getUsername() == info.getUsername()) {
-                userInfo.setBalance(info.getBalance());
-                writeData();
-            }
-        }
+    public void newUser(String username, String password) {
+        // TODO
     }
 
     public static void readData() {
         try {
             ObjectMapper mapper = new ObjectMapper();
 
-            userList = Arrays
-                    .asList(mapper.readValue(Paths.get("casino/resources/UserDatabase.json").toFile(), UserInfo[].class));
+            List<UserInfo> tempList = Arrays
+                    .asList(mapper.readValue(Paths.get("casino/resources/playerDB.json").toFile(), UserInfo[].class));
+
+            for (UserInfo pl : tempList) {
+                System.out.println(pl.getPassword());
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -47,7 +39,8 @@ public class FileHandling {
         ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
 
         try {
-            writer.writeValue(Paths.get("casino/resources/UserDatabase.json").toFile(), userList);
+            writer.writeValue(Paths.get("casino/resources/playerDB.json").toFile(), playerDB);
+            System.out.println("Player data base written");
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -17,6 +17,7 @@ public class Player {
     private int softSum = 0;
 
     public Player(UserInfo user) {
+
         this.userInfo = user;
     }
 
@@ -26,6 +27,10 @@ public class Player {
 
     public UserInfo getUserInfo() {
         return userInfo;
+    }
+
+    public Player() {
+        super();
     }
 
     public String getName() {
