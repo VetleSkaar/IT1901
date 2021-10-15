@@ -3,5 +3,6 @@ module casino.core {
     requires com.fasterxml.jackson.databind;
     requires com.fasterxml.jackson.annotation;
 
-    exports core;
+    exports casino.core;
+    exports casino.json;
 }

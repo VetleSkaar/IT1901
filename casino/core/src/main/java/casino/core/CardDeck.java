@@ -1,8 +1,8 @@
-package core;
+package casino.core;
+
+import static casino.core.BlackjackDefaults.*;
 
 import java.util.ArrayList;
-
-import static core.BlackjackDefaults.*;
 
 /**
  * A list of Card class elememts. contains methods for shuffling and drawing

@@ -1,4 +1,4 @@
-package core;
+package casino.core;
 
 /**
  * Contains logic for handling a standard 52-card type card. Uses help classes

@@ -1,4 +1,4 @@
-package core;
+package casino.json;
 
 import static org.junit.jupiter.api.Assertions.*;
 

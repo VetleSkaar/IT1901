@@ -1,10 +1,10 @@
-package core;
+package casino.core;
+
+import static casino.core.BlackjackDefaults.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import static core.BlackjackDefaults.*;
 
 /**
  * main logic for game blackjack.

@@ -1,4 +1,4 @@
-package core;
+package casino.core;
 
 /**
  * contains name of action and wether it is available

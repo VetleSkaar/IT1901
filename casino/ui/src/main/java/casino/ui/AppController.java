@@ -1,4 +1,4 @@
-package ui;
+package casino.ui;
 
 // import core.Casino;
 

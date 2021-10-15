@@ -1,4 +1,4 @@
-package core;
+package casino.core;
 
 /**
  * Class used for storing userinfo and managing user balance.

@@ -1,4 +1,4 @@
-package core;
+package casino.core;
 
 /**
  * A class for managing the value of a card.

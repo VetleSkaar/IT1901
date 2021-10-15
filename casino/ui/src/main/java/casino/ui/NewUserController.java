@@ -1,4 +1,4 @@
-package ui;
+package casino.ui;
 
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXCheckbox;

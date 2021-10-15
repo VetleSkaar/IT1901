@@ -1,10 +1,13 @@
-package core;
+package casino.core;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import casino.core.Card;
+import casino.core.CardDeck;
 
 public class CardDeckTest {
 

@@ -1,8 +1,10 @@
-package core;
+package casino.json;
 
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
+
+import casino.core.UserInfo;
 
 import java.nio.file.Paths;
 import java.util.ArrayList;

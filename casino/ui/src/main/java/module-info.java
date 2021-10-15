@@ -4,5 +4,5 @@ module casino.ui {
     requires javafx.fxml;
     requires MaterialFX;
 
-    opens ui to javafx.graphics, javafx.fxml;
+    opens casino.ui to javafx.graphics, javafx.fxml;
 }

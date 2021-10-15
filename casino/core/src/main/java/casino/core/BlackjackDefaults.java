@@ -1,4 +1,4 @@
-package core;
+package casino.core;
 
 import java.util.Arrays;
 import java.util.List;
