@@ -22,26 +22,46 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.testfx.framework.junit5.ApplicationTest;
 import org.testfx.matcher.control.LabeledMatchers;
 
-public class NewUserTest extends ApplicationTest{
-    
+public class NewUserTest extends ApplicationTest {
+
     private NewUserController controller;
 
     @Override
     public void start(final Stage stage) throws Exception {
-    final FXMLLoader loader = new FXMLLoader(getClass().getResource("NewUser.fxml"));
-    final Parent root = loader.load();
-    this.controller = loader.getController();
-    final Scene scene = new Scene(root);
-    stage.setScene(scene);
-    stage.show();
+        final FXMLLoader loader = new FXMLLoader(getClass().getResource("NewUser.fxml"));
+        final Parent root = loader.load();
+        this.controller = loader.getController();
+        final Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @Test
-    public void testController(){
+    public void testController() {
         assertNotNull(this.controller);
     }
 
+    @Test
+    public void testFakepassword() {
+        String fake = "****";
+        String password = "NTNU";
+        clickOn("#newUserPassword").write(password);
+        assertNotEquals(fake, controller.getPassword());
 
+    }
 
+    @Test
+    public void testRealUser() {
+        String name = "John Carew";
+        String password = "Chill og Spill";
+        clickOn("#newUserName").write(name);
+        clickOn("#newUserPassword").write(password);
+        clickOn("#termsCheckBox");
+        clickOn("#termsTextBtn");
+        clickOn("#newUserCreateBtn");
+        assertNotNull(controller.getUsername());
+        assertNotNull(controller.getPassword());
+
+    }
 
 }

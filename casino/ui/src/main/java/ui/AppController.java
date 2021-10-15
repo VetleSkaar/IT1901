@@ -68,4 +68,12 @@ public class AppController {
 
     }
 
+    public String getUsername() {
+        return signInUser.getText();
+    }
+
+    protected String getPassword() {
+        return signInPassword.getText();
+    }
+
 }

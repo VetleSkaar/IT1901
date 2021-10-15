@@ -110,4 +110,13 @@ public class NewUserController {
             returnToLogIn(event);
         }
     }
+
+    public String getUsername() {
+        return newUserName.getText();
+    }
+
+    protected String getPassword() {
+        return newUserPassword.getText();
+    }
+
 }
