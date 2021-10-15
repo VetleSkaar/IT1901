@@ -11,7 +11,7 @@ import java.util.List;
 
 public class FileHandling {
 
-    public static List<UserInfo> userList = new ArrayList<UserInfo>();
+    private static List<UserInfo> userList = new ArrayList<UserInfo>();
 
     public static void newUser(UserInfo user) {
         userList.add(user);
@@ -22,7 +22,7 @@ public class FileHandling {
         readData();
 
         for (UserInfo userInfo : userList) {
-            if(userInfo.getUsername() == info.getUsername()) {
+            if(userInfo.getUsername().equals(info.getUsername())) {
                 userInfo.setBalance(info.getBalance());
                 writeData();
             }

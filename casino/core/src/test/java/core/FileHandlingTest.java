@@ -6,14 +6,14 @@ import org.junit.jupiter.api.Test;
 
 public class FileHandlingTest {
     
-    @Test
+    /*@Test
     public void test_Read_Write() {
         FileHandling.userList.clear();
         UserInfo user = new UserInfo("testUser", "testPassword");
         FileHandling.readData();
         assertEquals(user.getUsername(), FileHandling.userList.get(0).getUsername());
         assertEquals(user.getPassword(), FileHandling.userList.get(0).getPassword());
-    }
+    }*/
 
     /*@Test
     public void test_UpdateUserInfo() {
