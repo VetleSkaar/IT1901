@@ -1,0 +1,13 @@
+[ {
+  "name" : "testPlayer1",
+  "balance" : 10000
+}, {
+  "name" : "testPlayer2",
+  "balance" : 600
+}, {
+  "name" : "testPlayer3",
+  "balance" : 4000
+}, {
+  "name" : "testPlayer4",
+  "balance" : 200
+} ]
