@@ -15,6 +15,15 @@ public class FileHandling {
 
     private static List<UserInfo> userList = new ArrayList<UserInfo>();
 
+    public static UserInfo getUserInfo(String uName) {
+        for (UserInfo userInfo : userList) {
+            if(userInfo.getUsername().equals(uName)) {
+                return userInfo;
+            } 
+        }
+        return null;
+    }
+
     /**
      * Method for adding new users to UserDatabase.json
      * 
@@ -48,7 +57,7 @@ public class FileHandling {
      * 
      * @return List of UserInfo Objects
      */
-    public static List<UserInfo> readData() {
+    public static void readData() {
         try {
             ObjectMapper mapper = new ObjectMapper();
 
@@ -58,9 +67,6 @@ public class FileHandling {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        return userList;
-
     }
 
     /**

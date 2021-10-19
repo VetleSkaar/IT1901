@@ -12,19 +12,18 @@ public class FileHandlingTest {
     public void test_Read_Write() {
         UserInfo user = new UserInfo("testUser", "testPassword");
         FileHandling.newUser(user);
-        assertEquals(user.getUsername(), FileHandling.readData().get(0).getUsername());
-        assertEquals(user.getPassword(), FileHandling.readData().get(0).getPassword());
+        assertEquals(user.getPassword(), FileHandling.getUserInfo("testUser").getPassword());
     }
 
     @Test
     public void test_UpdateUserInfo() {
         UserInfo user = new UserInfo("testUser", "testPassword");
-        assertEquals(user.getBalance(), FileHandling.readData().get(0).getBalance());
+        assertEquals(user.getBalance(), FileHandling.getUserInfo("testUser").getBalance());
 
         user.setBalance(200);
         FileHandling.updateUserInfo(user);
 
-        assertEquals(user.getBalance(), FileHandling.readData().get(0).getBalance());
+        assertEquals(user.getBalance(), FileHandling.getUserInfo("testUser").getBalance());
     }
     
 }
