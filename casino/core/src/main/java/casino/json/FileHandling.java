@@ -15,11 +15,23 @@ public class FileHandling {
 
     private static List<UserInfo> userList = new ArrayList<UserInfo>();
 
+    /**
+     * Method for adding new users to UserDatabase.json
+     * 
+     * @param user UserInfo object
+     */
     public static void newUser(UserInfo user) {
         userList.add(user);
         writeData();
     }
 
+    /**
+     * Method for updating account balance.
+     *  
+     * Finds correct user in json file and updates balance.
+     * 
+     * @param info UserInfo object
+     */
     public static void updateUserInfo(UserInfo info) {
         readData();
 
@@ -31,29 +43,38 @@ public class FileHandling {
         }
     }
 
-    public static void readData() {
+    /**
+     * Reads user data from UserDatabase.json to a List
+     * 
+     * @return List of UserInfo Objects
+     */
+    public static List<UserInfo> readData() {
         try {
             ObjectMapper mapper = new ObjectMapper();
 
             userList = Arrays
-                    .asList(mapper.readValue(Paths.get("casino/resources/UserDatabase.json").toFile(), UserInfo[].class));
+                    .asList(mapper.readValue(Paths.get("../../resources/UserDatabase.json").toFile(), UserInfo[].class));
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
+        return userList;
+
     }
 
+    /**
+     * Writes data from userList to UserDatabase.json
+     */
     public static void writeData() {
         ObjectMapper mapper = new ObjectMapper();
         ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
 
         try {
-            writer.writeValue(Paths.get("casino/resources/UserDatabase.json").toFile(), userList);
+            writer.writeValue(Paths.get("../../resources/UserDatabase.json").toFile(), userList);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 }
-
