@@ -21,6 +21,8 @@ import javafx.stage.Stage;
 
 public class NewUserController {
 
+    // ------------Elements-----------------//
+
     @FXML
     private MFXTextField newUserName;
 
@@ -38,6 +40,9 @@ public class NewUserController {
 
     @FXML
     private MFXButton newUserCreateBtn;
+
+
+    // ------------Functions-----------------//
 
     @FXML
     boolean validation(ActionEvent event) throws IOException {
