@@ -21,17 +21,16 @@ public class Blackjack {
 
     private final List<Action> actions = ACTIONS;
 
-    public Blackjack() {
-        playableDeck = new CardDeck();
-        playableDeck.multiplyAndShuffleDeck(8);
-    }
-
     public Player getRegisteredPlayer() {
         return registeredPlayer;
     }
 
     public void setRegisteredPlayer(Player registeredPlayer) {
         this.registeredPlayer = registeredPlayer;
+    }
+
+    public void setPlayableDeck(CardDeck deck) {
+        this.playableDeck = deck;
     }
 
     private void nextPlayer() {
