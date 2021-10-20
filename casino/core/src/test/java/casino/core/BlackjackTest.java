@@ -59,13 +59,4 @@ public class BlackjackTest {
         assertEquals(cardsInHand.size(), 1);
 
     }
-
-    /*
-     * @Test public void testGetHistory() { blackjack.hit(player); String history =
-     * "Player Hits, they got ♠K. They now have: " + player.getHand() + ". Total: "
-     * + player.getTotalSum(); assertEquals(history, blackjack.getHistory());
-     * 
-     * }
-     */
-
 }
