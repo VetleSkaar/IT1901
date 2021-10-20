@@ -6,10 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import casino.core.Card;
-import casino.core.Suit;
-import casino.core.Value;
-
 public class CardTest {
 
     Value eight, king;
@@ -31,10 +27,10 @@ public class CardTest {
         assertEquals(eightOfSpades.getValue(), eight);
     }
 
-    /*@Test
-    public void testToString() {
-        assertEquals(eightOfSpades.toString(), "♠8");
-    }*/
+    /*
+     * @Test public void testToString() { assertEquals(eightOfSpades.toString(),
+     * "♠8"); }
+     */
 
     @Test
     public void testFaceCardToString() {

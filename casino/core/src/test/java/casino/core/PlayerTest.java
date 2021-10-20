@@ -4,9 +4,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import casino.core.Player;
-import casino.core.UserInfo;
-
 public class PlayerTest {
 
     @Test

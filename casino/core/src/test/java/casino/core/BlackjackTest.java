@@ -22,7 +22,7 @@ public class BlackjackTest {
         blackjack = new Blackjack();
         blackjack.setRegisteredPlayer(player);
         blackjack.setPlayableDeck(cardDeck);
-        blackjack.start();
+
     }
 
     @Test
@@ -32,6 +32,7 @@ public class BlackjackTest {
 
     @Test
     public void testStart() {
+        blackjack.start();
         List<Card> cardsInHand = new ArrayList<Card>();
         for (Card card : player.getHand()) {
             cardsInHand.add(card);
@@ -44,6 +45,10 @@ public class BlackjackTest {
         assertEquals(dealerCards.size(), 2);
     }
 
+    /**
+     * First Card in an unshuffled dec should be King of Spades. Checks that hit()
+     * deals the player this card.
+     */
     @Test
     public void testHit() {
         blackjack.hit(player);
@@ -51,7 +56,16 @@ public class BlackjackTest {
         for (Card card : player.getHand()) {
             cardsInHand.add(card);
         }
-        assertEquals(cardsInHand.size(), 3);
+        assertEquals(cardsInHand.size(), 1);
+
     }
+
+    /*
+     * @Test public void testGetHistory() { blackjack.hit(player); String history =
+     * "Player Hits, they got ♠K. They now have: " + player.getHand() + ". Total: "
+     * + player.getTotalSum(); assertEquals(history, blackjack.getHistory());
+     * 
+     * }
+     */
 
 }
