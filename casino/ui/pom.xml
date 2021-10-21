@@ -10,6 +10,11 @@
         <relativePath>..</relativePath>
     </parent>
 
+    <properties>
+        <skipUiTests>false</skipUiTests>
+    </properties>
+
+
     <dependencies>
 
         <dependency>
@@ -82,6 +87,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
         		<artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
+                    <skipTests>${skipUiTests}</skipTests>
                     <argLine>
                     @{jaCoCoArgLine} --add-opens casino.ui/casino.ui=ALL-UNNAMED --add-exports javafx.graphics/com.sun.javafx.application=ALL-UNNAMED
                     </argLine>

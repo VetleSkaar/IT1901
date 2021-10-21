@@ -10,11 +10,11 @@ With this application we aim to build a casino, where users can gamble using cur
 
 # Code-Organization
 
-The project “casino” is, in this release, organized in 2 modules, casino-core and casino-UI, respectively with main-code and tests. 
+The project “casino” is, in this release, organized in 2 modules, casino-core and casino-UI, respectively with main-code and tests.
 
 Every module contains:
-**src/main/java:**  for application-code
-**src/test/java:**  Test code.
+**src/main/java:** for application-code
+**src/test/java:** Test code.
 
 Later on in the project we plan to add:
 
@@ -23,7 +23,6 @@ Later on in the project we plan to add:
 As necessary
 
 Every module contains a pom.xml
-
 
 # Arkitektur diagram
 
@@ -58,62 +57,59 @@ frame "javafx" {
 
 # Code-documentation
 
-In our project we use checkstyle to spot any inconsistencies in our code. 
+In our project we use checkstyle to spot any inconsistencies in our code.
 In the config folder we have our own custom style based google_checks.xml, where we have made some minor modifactions that ensures that we are consistent in the code that we write.
 
-We also have the spotbugs plugin, that we use to detect bugs that our IDE's cannot detect. It also has a filter in the config folder for certain items to exclude from the checks. 
+We also have the spotbugs plugin, that we use to detect bugs that our IDE's cannot detect. It also has a filter in the config folder for certain items to exclude from the checks.
 
-For testing our test coverage, we use jacoco. This gives us a overview over what in the code that needs testing, and lets us know if we have sufficient test coverage. 
+For testing our test coverage, we use jacoco. This gives us a overview over what in the code that needs testing, and lets us know if we have sufficient test coverage.
 
-Throughout our programming, we talk and communicate with each other online as that is most practical for our group. 
+Throughout our programming, we talk and communicate with each other online as that is most practical for our group.
 
-We have also tried out pair programming, where we take turns writing code. In our instance, we found pair programming to be okay, but we also felt that we could get the same job done using screen sharing and talking online using Discord. 
+We have also tried out pair programming, where we take turns writing code. In our instance, we found pair programming to be okay, but we also felt that we could get the same job done using screen sharing and talking online using Discord.
 
 For tackling different issues and development tasks, we found that creating new branches that tackled those issues worked well.
- 
- 
 
-Every Tuesday and when needed the group gets together and goes over what needs to be done, and this has worked well so far. 
+Every Tuesday and when needed the group gets together and goes over what needs to be done, and this has worked well so far.
 
 # Core
 
 Casino core contains two packages, core and json.
-Core contains code for the game logic needed. As per the second release it contains code for the Player-class, Userinfo, Card logic and BlackJack logic. 
-Json contains Filehandling.java, the class for managing storing user info in the persistence module. 
+Core contains code for the game logic needed. As per the second release it contains code for the Player-class, Userinfo, Card logic and BlackJack logic.
+Json contains Filehandling.java, the class for managing storing user info in the persistence module.
 
-The Blackjack logic is yet to be connected to the UI module, as persistence and test-coverage have been the priority in release 2. This will be added in a later release. 
+The Blackjack logic is yet to be connected to the UI module, as persistence and test-coverage have been the priority in release 2. This will be added in a later release.
 
 # UI
 
-casino-UI contains all classes and logic in relation to the visual representation and user interface of the game. As per the fist release it contains the FXML and controller for the player login screen. 
-Later in the project we plan to add a persistence module, with all code related writing and reading data in our domain. This is yet to be implemented. 
+casino-UI contains all classes and logic in relation to the visual representation and user interface of the game. As per the fist release it contains the FXML and controller for the player login screen.
+Later in the project we plan to add a persistence module, with all code related writing and reading data in our domain. This is yet to be implemented.
 
 # Resources
+
 Resources contains png’s used in project description, as well as two json files for storing user and player data. The code for storing user info is handled by the “Filehandling”-class in casino-core.
 
 # How to run locally
 
 Our application is localized in our UI-module, and uses a javafx plugin.To run the application you wish to first enter the following in the terminal, starting from our group directory:
 
-	
-	“cd casino”
-	"mvn clean"
-	"mvn install"
-	“cd ui”
-	Run with “mvn javafx:run”
-	
+    “cd casino”
+    "mvn install"
+    “cd ui”
+    Run with “mvn javafx:run”
+
 # How to run with gitpod
+
 If running with gitpod, press the button and wait for it to load a virtual machine.
 Go into correct folder with:
 
-	"mvn install"
-	“cd ui”
-	Run with “mvn javafx:run”
-	Open port view 6080 to see the application
+    “cd ui”
+    Run with “mvn javafx:run”
+    Open port view 6080 to see the application
 
 # How to test
-To test the whole project, enter:
-	“mvn test”
-From the project directory.
-To test individual modules, enter the given module, and run the same command. 
 
+To test the whole project, enter:
+“mvn test”
+From the project directory.
+To test individual modules, enter the given module, and run the same command.

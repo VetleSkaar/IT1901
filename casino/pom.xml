@@ -11,7 +11,6 @@
         <maven.compiler.source>16</maven.compiler.source>
         <jupiter.version>5.7.2</jupiter.version>
         <maven.compiler.target>16</maven.compiler.target>
-        <skipTests>false</skipTests>
     </properties>
 
     <dependencyManagement>
