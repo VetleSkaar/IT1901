@@ -15,7 +15,7 @@ public class FileHandling {
 
     private static List<UserInfo> userList = new ArrayList<UserInfo>();
 
-    public static UserInfo getUserInfo(String uName) {
+    public UserInfo getUserInfo(String uName) {
         for (UserInfo userInfo : userList) {
             if(userInfo.getUsername().equals(uName)) {
                 return userInfo;
@@ -29,7 +29,7 @@ public class FileHandling {
      * 
      * @param user UserInfo object
      */
-    public static void newUser(UserInfo user) {
+    public void newUser(UserInfo user) {
         userList.add(user);
         writeData();
     }
@@ -41,7 +41,7 @@ public class FileHandling {
      * 
      * @param info UserInfo object
      */
-    public static void updateUserInfo(UserInfo info) {
+    public void updateUserInfo(UserInfo info) {
         readData();
 
         for (UserInfo userInfo : userList) {
