@@ -21,17 +21,16 @@ public class Blackjack {
 
     private final List<Action> actions = ACTIONS;
 
-    public Blackjack() {
-        playableDeck = new CardDeck();
-        playableDeck.multiplyAndShuffleDeck(8);
-    }
-
     public Player getRegisteredPlayer() {
         return registeredPlayer;
     }
 
     public void setRegisteredPlayer(Player registeredPlayer) {
         this.registeredPlayer = registeredPlayer;
+    }
+
+    public void setPlayableDeck(CardDeck deck) {
+        this.playableDeck = deck;
     }
 
     private void nextPlayer() {
@@ -42,19 +41,20 @@ public class Blackjack {
     }
 
     /**
-     * Checks if a players sum is over 21
+     * Checks if a players sum is over 21.
      * 
-     * @param player to check
+     * @param player to check.
      */
     private void checkBust(Player player) {
         if (player.getSoftSum() > 21) {
             addToHistory(player.getName() + " busted.");
 
         }
+
     }
 
     /**
-     * @return a String containing every action made during game seperated by \n
+     * @return a String containing every action made during game seperated by \n.
      */
     public String getHistory() {
         StringBuilder history = new StringBuilder();
@@ -71,19 +71,19 @@ public class Blackjack {
     }
 
     /**
-     * if no cards are drawn
+     * if no cards are drawn.
      * 
-     * @return a String of the event "players 'action's"
+     * @return a String of the event "players 'action's".
      */
     private String createEvent(Player player, Action action) {
         return player.getName() + " " + action.getName() + "s";
     }
 
     /**
-     * if a card is drawn
+     * if a card is drawn.
      * 
      * @return a String of the event "'Player' got 'Card'. They now have 'All
-     *         Cards'. Total: 'total sum'"
+     *         Cards'. Total: 'total sum'".
      */
     private String createEvent(Player player, Card card) {
         return player.getName() + " got " + card + ". They now have: " + player.getHand() + ". Total: "
@@ -93,8 +93,8 @@ public class Blackjack {
     /**
      * event for when cardss are being hit.
      * 
-     * @param player player preforming event
-     * @param action action being done
+     * @param player player preforming event.
+     * @param action action being done.
      * @param card   Card being delt.
      * @return a string describing event.
      */
@@ -103,21 +103,19 @@ public class Blackjack {
                 + player.getHand() + ". Total: " + player.getTotalSum();
     }
 
-    // Actions
-
     /**
-     * Filters out all unavailable actions
+     * Filters out all unavailable actions.
      * 
-     * @return list of available actions
+     * @return list of available actions.
      */
     private List<Action> getAvailableActions() {
         return actions.stream().filter(Action::isAvailable).collect(Collectors.toList());
     }
 
     /**
-     * Deals a card to the player
+     * Deals a card to the player.
      * 
-     * @param player, player being delt card
+     * @param player, player being delt card.
      * @throws IllegalCallerException if action "hit" is unavailable.
      */
     public void hit(Player player) {
@@ -131,11 +129,12 @@ public class Blackjack {
 
     /**
      * Finishes players round, adds action adds action to history, and continues to
-     * next player
+     * next player.
      * 
-     * @param player, player proforming stand
+     * @param player, player proforming stand.
      * @throws IllegalCallerException if action "stand" is unavailable.
      */
+
     public void stand(Player player) {
         if (!getAvailableActions().contains(STAND)) {
             throw new IllegalCallerException("Action 'stand' is unavailable");
@@ -149,7 +148,7 @@ public class Blackjack {
      * doubles potential return by 100%. In return player must stand after first
      * hit.
      * 
-     * @param player, player proforming stand
+     * @param player, player proforming stand.
      * @throws IllegalCallerException if action "double down" is unavailable.
      */
     public void doubleDown(Player player) {
@@ -167,7 +166,7 @@ public class Blackjack {
      * hands, then receiving an additional card for each hand from the dealer.
      * 
      * @param player
-     * @throws IllegalCallerException if action "double down" is unavailable.
+     * @throws IllegalCallerException if action "split" is unavailable.
      */
     public void split(Player player) {
         if (!getAvailableActions().contains(SPLIT)) {
@@ -191,10 +190,10 @@ public class Blackjack {
     }
 
     /**
-     * player is dealt a card, while another action (etc double down) is preformed
+     * player is dealt a card, while another action (etc double down) is preformed.
      * 
-     * @param player
-     * @param action
+     * @param player player who is delt card.
+     * @param action Cause of card delt.
      */
     private void deal(Player player, Action action) {
         Card newCard = playableDeck.draw(); // removes the card on the top of the deck
@@ -206,17 +205,17 @@ public class Blackjack {
     /**
      * player is dealt a card
      * 
-     * @param player
+     * @param player player being delt card.
      */
     private void deal(Player player) {
-        Card newCard = playableDeck.draw(); // removes the card on the top of the deck
+        Card newCard = playableDeck.draw(); // removes the card on the top of the deck.
         player.addCardToHand(newCard);
 
         addToHistory(createEvent(player, newCard));
     }
 
     /**
-     * Dealer plays until softsum goes above 16 or hard
+     * Dealer plays until softsum goes above 16 or hard.
      * 
      */
     public void playDealer() {
@@ -228,7 +227,7 @@ public class Blackjack {
 
     }
 
-    // Starting function
+    // Starting function.
     public void start() {
         currentPlayer = registeredPlayer;
         deal(currentPlayer);

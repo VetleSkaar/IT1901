@@ -55,7 +55,7 @@ public class Player {
     }
 
     /**
-     * sets players name and balance to themself.
+     * sets players name and balance to input player.
      * 
      * @param player
      */
