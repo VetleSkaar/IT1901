@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 
 public class PlayerTest {
 
+    Player player = new Player(new UserInfo("Player", "password"));
+
     @Test
     public void test_new_player() {
         UserInfo user = new UserInfo("name", "password");
@@ -44,8 +46,6 @@ public class PlayerTest {
 
     @Test
     public void test_remove_from_player_balance() {
-        UserInfo user = new UserInfo("name", "password");
-        Player player = new Player(user);
         player.removeFromBalance(1000);
         assertEquals(player.getBalance(), 9000);
 
@@ -53,12 +53,33 @@ public class PlayerTest {
 
     @Test
     public void test_remove_too_much_from_player_balance() {
-        UserInfo user = new UserInfo("name", "password");
-        Player player = new Player(user);
         assertThrows(IllegalArgumentException.class, () -> {
             player.removeFromBalance(11000);
             ;
         }, "Cannot remove higher value than is in balance balance");
 
     }
+
+    @Test
+    public void testAddCardToHand() {
+        Value eight = new Value("Eight", 8);
+        Suit spade = new Suit("Spade", "♠", "♤");
+        Card eightOfSpades = new Card(spade, eight);
+        player.addCardToHand(eightOfSpades);
+        assertEquals(eightOfSpades, player.getHand().get(0));
+    }
+
+    @Test
+    public void testGetTotalSum() {
+        Value eight = new Value("Eight", 8);
+        Suit spade = new Suit("Spade", "♠", "♤");
+        Card eightOfSpades = new Card(spade, eight);
+        player.addCardToHand(eightOfSpades);
+        assertEquals("8", player.getTotalSum());
+        Value ace = new Value("Ace", 14, 10, 1);
+        Card aceOfSpades = new Card(spade, ace);
+        player.addCardToHand(aceOfSpades);
+        assertEquals("9/18", player.getTotalSum());
+    }
+
 }

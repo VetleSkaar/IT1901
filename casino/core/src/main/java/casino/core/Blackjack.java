@@ -50,6 +50,7 @@ public class Blackjack {
             addToHistory(player.getName() + " busted.");
 
         }
+
     }
 
     /**
@@ -165,7 +166,7 @@ public class Blackjack {
      * hands, then receiving an additional card for each hand from the dealer.
      * 
      * @param player
-     * @throws IllegalCallerException if action "double down" is unavailable.
+     * @throws IllegalCallerException if action "split" is unavailable.
      */
     public void split(Player player) {
         if (!getAvailableActions().contains(SPLIT)) {

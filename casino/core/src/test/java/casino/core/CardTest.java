@@ -37,4 +37,27 @@ public class CardTest {
         assertNotEquals(eightOfSpades.toString(), "♠K");
     }
 
+    @Test
+    public void testAltValueCard() {
+        Value ace = new Value("Ace", 14, 10, 1);
+        Card aceOfSpades = new Card(suit, ace);
+        assertEquals(1, aceOfSpades.getValue().getAltValue());
+        assertEquals(10, aceOfSpades.getValue().getBjValue());
+        assertEquals(14, aceOfSpades.getValue().getValue());
+        assertEquals("Ace", aceOfSpades.getValue().getName());
+    }
+
+    @Test
+    public void testGetSuits() {
+        assertEquals("Spade", eightOfSpades.getSuit().getSuit());
+        assertEquals("♤", eightOfSpades.getSuit().getSymbolW());
+        assertEquals("♠", eightOfSpades.getSuit().getSymbolB());
+    }
+
+    @Test
+    public void testToString() {
+        String eightofSpadesString = "♤8";
+        assertEquals(eightofSpadesString, eightOfSpades.toString());
+    }
+
 }

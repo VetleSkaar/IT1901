@@ -1,6 +1,7 @@
 package casino.core;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,6 +58,25 @@ public class BlackjackTest {
             cardsInHand.add(card);
         }
         assertEquals(cardsInHand.size(), 1);
-
+        Card newCard = player.getHand().get(0);
+        assertEquals("Spade", newCard.getSuit().getSuit());
     }
+
+    /**
+     * When player hits, this should be added to history. All other actions uses
+     * same code for adding to history. If it works for hit, it works for all.
+     */
+    @Test
+    public void testGetHistory() {
+        blackjack.hit(player);
+        String history = blackjack.getHistory();
+        assertTrue(history.contains("Player Hits"));
+    }
+
+    @Test
+    public void playDealer() {
+        blackjack.playDealer();
+        assertEquals(20, DEALER.getHardSum());
+    }
+
 }
