@@ -4,7 +4,7 @@
 
 The login window consists of text fields for username and password, as well as a button to log in. There is also a button to register a new account.
 
-The create new user window consists of text fields for username and password, a date picker for date of birth, a checkbox for terms and conditions, a clickable text label to show the terms and conditions, and a button to create a new user.
+The create new user window consists of text fields for username and password, a date picker for date of birth, a checkbox for terms and conditions, a clickable text label to show the terms and conditions, and a button to create a new user. For the time being the NewUserController, UserInfo and FileHandling classes have been connected so that creating a new user will now handle the information written and generate a new player in the UserDatabase.json file.
 
 The game window for Blackjack consists of the cards for both the player and the dealer. It also has buttons for user input. (The interface has not yet been designed but an example is attached below. Red is for buttons, blue is for text fields and gray is information for the player)
 
