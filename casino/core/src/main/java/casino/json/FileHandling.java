@@ -17,9 +17,9 @@ public class FileHandling {
 
     public UserInfo getUserInfo(String uName) {
         for (UserInfo userInfo : userList) {
-            if(userInfo.getUsername().equals(uName)) {
+            if (userInfo.getUsername().equals(uName)) {
                 return userInfo;
-            } 
+            }
         }
         return null;
     }
@@ -36,7 +36,7 @@ public class FileHandling {
 
     /**
      * Method for updating account balance.
-     *  
+     * 
      * Finds correct user in json file and updates balance.
      * 
      * @param info UserInfo object
@@ -45,7 +45,7 @@ public class FileHandling {
         readData();
 
         for (UserInfo userInfo : userList) {
-            if(userInfo.getUsername().equals(info.getUsername())) {
+            if (userInfo.getUsername().equals(info.getUsername())) {
                 userInfo.setBalance(info.getBalance());
                 writeData();
             }
@@ -61,8 +61,8 @@ public class FileHandling {
         try {
             ObjectMapper mapper = new ObjectMapper();
 
-            userList = Arrays
-                    .asList(mapper.readValue(Paths.get("../../resources/UserDatabase.json").toFile(), UserInfo[].class));
+            userList = Arrays.asList(
+                    mapper.readValue(Paths.get("../resources/" + "UserDatabase.json").toFile(), UserInfo[].class));
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -77,7 +77,7 @@ public class FileHandling {
         ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
 
         try {
-            writer.writeValue(Paths.get("../../resources/UserDatabase.json").toFile(), userList);
+            writer.writeValue(Paths.get("../resources/" + "UserDatabase.json").toFile(), userList);
 
         } catch (Exception e) {
             e.printStackTrace();
