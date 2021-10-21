@@ -4,11 +4,12 @@ This folder/package contains tests for the casino core program. Currently only t
 
 ## What is tested
 
-The tests simulate
+The tests simulate:
 
 - creating a new player
 - creating a player with an illegal name
 - creating a player with an allready existing balance
 - creating a player with a negative balance
+- Read, write and update user information in persistence module.
 
 more tests to come

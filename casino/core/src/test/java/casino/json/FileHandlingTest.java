@@ -4,27 +4,28 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-public class FileHandlingTest {
-    
-    /*@Test
-    public void test_Read_Write() {
-        FileHandling.userList.clear();
-        UserInfo user = new UserInfo("testUser", "testPassword");
-        FileHandling.readData();
-        assertEquals(user.getUsername(), FileHandling.userList.get(0).getUsername());
-        assertEquals(user.getPassword(), FileHandling.userList.get(0).getPassword());
-    }*/
+import casino.core.UserInfo;
 
-    /*@Test
-    public void test_UpdateUserInfo() {
-        FileHandling.userList.clear();
+public class FileHandlingTest {
+
+    private FileHandling fileHandler = new FileHandling();
+    
+    @Test
+    public void test_Read_Write() {
         UserInfo user = new UserInfo("testUser", "testPassword");
-        assertEquals(user.getBalance(), FileHandling.userList.get(0).getBalance());
+        fileHandler.newUser(user);
+        assertEquals(user.getPassword(), fileHandler.getUserInfo("testUser").getPassword());
+    }
+
+    @Test
+    public void test_UpdateUserInfo() {
+        UserInfo user = new UserInfo("testUser", "testPassword");
+        assertEquals(user.getBalance(), fileHandler.getUserInfo("testUser").getBalance());
 
         user.setBalance(200);
-        FileHandling.readData();
+        fileHandler.updateUserInfo(user);
 
-        assertEquals(user.getBalance(), FileHandling.userList.get(0).getBalance());
-    }*/
+        assertEquals(user.getBalance(), fileHandler.getUserInfo("testUser").getBalance());
+    }
     
 }

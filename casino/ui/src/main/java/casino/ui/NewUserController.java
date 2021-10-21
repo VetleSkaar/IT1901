@@ -8,6 +8,9 @@ import io.github.palexdev.materialfx.controls.MFXPasswordField;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import java.io.IOException;
 import java.time.LocalDate;
+
+import casino.core.UserInfo;
+import casino.json.FileHandling;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +23,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class NewUserController {
+
+    // ------------Elements-----------------//
 
     @FXML
     private MFXTextField newUserName;
@@ -39,8 +44,14 @@ public class NewUserController {
     @FXML
     private MFXButton newUserCreateBtn;
 
+
+    private static FileHandling fileHandler = new FileHandling();
+
+
+    // ------------Functions-----------------//
+
     @FXML
-    boolean validation(ActionEvent event) throws IOException {
+    boolean nullValidation(ActionEvent event) throws IOException {
         LocalDate minAge = LocalDate.now().minusYears(18);
         boolean isValid = false;
         try {
@@ -70,6 +81,7 @@ public class NewUserController {
         }
         return isValid;
     }
+
 
     @FXML
     void checkIfAgreed() {
@@ -106,7 +118,9 @@ public class NewUserController {
 
     @FXML
     void onNewUserBtnClick(ActionEvent event) throws IOException {
-        if (validation(event) == true) {
+        if (nullValidation(event) == true) {
+            UserInfo user = new UserInfo(getUsername(), getUnencryptedPassword());
+            fileHandler.newUser(user);
             returnToLogIn(event);
         }
     }
@@ -116,6 +130,11 @@ public class NewUserController {
     }
 
     protected String getPassword() {
+        return newUserPassword.getText();
+    }
+
+    protected String getUnencryptedPassword() {
+        newUserPassword.setShowPassword(true);
         return newUserPassword.getText();
     }
 
