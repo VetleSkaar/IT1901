@@ -1,15 +1,11 @@
 # Tests for the Casino
 
-This folder/package contains tests for the casino core program. Currently only tests the player class.
+This folder/package contains tests for the casino core program. Core currently does not have an 100% test coverage. As the core-logic is updated to fit a functional ui in the runnable program. This is to be implemented in a future release. 
 
-## What is tested
+# Tests for the Casino
 
-The tests simulate:
+PlayerTest - tests creating a new player with different inputs for name, balance, cards and userinfo.
+CardTest - Tests methods for Card-Class, as well as helping classes Value.java and Suit.java.
+CardDeckTest - Tests creating a new deck, and checking it contanins right amount of cards.
+BlackjackTest - Tests logic for the main game. Still some tests to be implemented. 
 
-- creating a new player
-- creating a player with an illegal name
-- creating a player with an allready existing balance
-- creating a player with a negative balance
-- Read, write and update user information in persistence module.
-
-more tests to come
