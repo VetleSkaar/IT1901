@@ -81,6 +81,8 @@ Casino core contains two packages, core and json.
 Core contains code for the game logic needed. As per the second release it contains code for the Player-class, Userinfo, Card logic and BlackJack logic. 
 Json contains Filehandling.java, the class for managing storing user info in the persistence module. 
 
+The Blackjack logic is yet to be connected to the UI module, as persistence and test-coverage have been the priority in release 2. This will be added in a later release. 
+
 # UI
 
 casino-UI contains all classes and logic in relation to the visual representation and user interface of the game. As per the fist release it contains the FXML and controller for the player login screen. 
