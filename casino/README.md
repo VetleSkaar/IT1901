@@ -19,7 +19,5 @@ As an owner, I want to test my application to avoid upset customers.
 
 As a user, I want the application I use to look nice for ease of use.
 
-As a user, I want the application to store my balance, so I can keep my money between sessions. 
-
-As a user, I want the application to store my game-record, so i can stay informed about my playing stats. 
+As a user, I want the application to store my balance and user info, so I can keep my money between sessions. 
 
