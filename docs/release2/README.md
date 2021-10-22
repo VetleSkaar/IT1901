@@ -2,6 +2,8 @@
 
 For this release, The main contributions is the new persistence module, connected persistence with login-controller, ensured test-coverage with jacoco and checkstyle plugin, and added new Core logic and tests for blackjack-game to be implemented later. 
 
+The persistence module uses Jackson to save user information to a JSON file.
+
 There has been implemented a new window for creating a new user that shows up when clicking on the “Create New User”-button.
 
 All the README.md’s have been changed, and we also added an architecture diagram displaying the project.
