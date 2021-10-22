@@ -25,7 +25,7 @@ As necessary
 
 Every module contains a pom.xml
 
-# Arkitektur diagram
+# Architecture diagram
 
 ```plantuml
 frame "core" {
