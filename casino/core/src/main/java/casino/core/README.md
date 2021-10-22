@@ -11,13 +11,15 @@ Value: Helping class for managing the value of a card.
 
 CardDeck: A list of Card class elememts. contains methods for shuffling and drawing cards.
 
-Player: The contestants in Blackjack game. handles player name, balance, in game sums and cards in hand.
+UserInfo: Handles a users username, password and balance.
+
+Player: The contestants in Blackjack game. Delegates name and account balance to UserInfo. Handles player in game sum, and in game cards. 
 
 Action: contains name of action and wether it is available.
 
 Blackjack: main logic for game blackjack.
 
-BlackjackDefaults: Class for storing default values for blackjack game. contains cardvalues and actions. 
+BlackjackDefaults: Class for storing default values for blackjack game. contains cards in a standard 52-deck and actions in a blackjack game. 
 
 
 
