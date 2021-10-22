@@ -21,3 +21,7 @@ As a user, I want the application I use to look nice for ease of use.
 
 As a user, I want the application to store my balance and user info, so I can keep my money between sessions. 
 
+As a user, I want to create an account to be able to use the application.
+
+As a user, I want my account to save my balance.
+
