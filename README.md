@@ -55,7 +55,7 @@ frame "javafx" {
 [casino.ui] --> [fxml]
 [casino.ui] --> [casino.json]
 [casino.ui] --> [casino.core]
-[casino.json] <--> [Jackson]
+[casino.json] --> [Jackson]
 [datafiles] <--> [casino.json]
 
 
